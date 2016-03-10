@@ -1,6 +1,12 @@
 # cb-prototype
 Child Benefit prototype
 
+https://github.tools.tax.service.gov.uk/DDCN/cb-prototype
+
+http://cb-prototype.herokuapp.com/
+username: `ddcn`
+password: `b3n3fit`
+
 Prototyping tool built in [Express](http://expressjs.com/).
 
 It will give you a basic Express app, with templates, css and images from the [GOV.UK front-end toolkit](https://github.com/alphagov/govuk_frontend_toolkit).
