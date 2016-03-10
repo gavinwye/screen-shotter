@@ -48,11 +48,9 @@ node start.js
 
 * Go to [localhost:3000](http://localhost:3000) in your browser.
 
-#### Note
+#### Deploying
 
 **NOTE:** If you require access to the heroku repository then contact [adamconder](https://github.tools.tax.service.gov.uk/adamconder)
-
-#### Deploying
 
 **NOTE:** You need to be logged into heroku through the toolbelt
 ```heroku login```
