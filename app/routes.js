@@ -3,7 +3,7 @@ var router = express.Router();
 var config = require('./config');
 
 router.get('/', function (req, res) {
-  config.host(req);
+  config.host(req) + redirectSuccess; else 
   res.render('index');
 });
 
