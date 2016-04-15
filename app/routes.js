@@ -3,7 +3,15 @@ var router = express.Router();
 var config = require('./config');
 
 router.get('/', function (req, res) {
-  res.render('index');
+
+  var redirectUrl = config.host(req);
+  // this is used for the IV (authentication) prototype so that we dont have to keep
+  // changing the URl between localhost and the heroku app's URL.
+  // The js for this is in the file /app/views/config.js
+
+  res.render('index', {
+    'redirect' : redirectUrl
+  });
 });
 
 
