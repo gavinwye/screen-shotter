@@ -1,34 +1,29 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Child Benefit Prototype
+Child Benefit Prototype
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
   <div class="grid-row">
+
     <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Apply for Child Benefit</h1>
+      <p class="lede">Introduction explaning that you need to sign in to your Government Gateway account.</p>
 
-      <h1 class="heading-xlarge">Child Benefit prototype</h1>
+      <h3 class="heading-medium">Sign in</h3>
+      <p><a class="button button-start" href="http://2fa:auth@twofactor-prototype.herokuapp.com/01_govuk-login_sa?url={{redirect}}/auth_success&failUrl={{redirect}}/auth_fail">Sign in</a></p>
+      <p>If you don't have an account you can <a href="http://2fa:auth@twofactor-prototype.herokuapp.com/gg_registration/select_service?url={{redirect}}/auth_success&failUrl={{redirect}}/auth_fail">create an account</a>.</p>
+      <h4 class="heading-small">This is what you need to create an account</h4>
+      <ul class="list list-bullet">
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+      </ul>
 
-
-      <h2 class="heading-large">Registration</h2>
-      <p>Do we need some content here to explain what this is for?</p>
-
-      </div>
-      <div class="column-half">
-        <h3 class="heading-medium">Sign in</h3>
-        <p>For a user who already has a Government Gateway account they just need to sign in.</p>
-        <p><a class="button button-start" href="http://2fa:auth@twofactor-prototype.herokuapp.com/01_govuk-login_sa?url={{redirect}}/auth_success&failUrl={{redirect}}/auth_fail">Sign in</a></p>
-      </div>
-      <!-- <p>or</p> -->
-      <div class="column-half">
-        <h3 class="heading-medium">Create an account</h3>
-        <p>For a user who doesnt have a Governement Gateway account they will need to create an account.</p>
-        <p><a class="button button-start" href="http://2fa:auth@twofactor-prototype.herokuapp.com/gg_registration/select_service?url={{redirect}}/auth_success&failUrl={{redirect}}/auth_fail">Create account </a></p>
-      </div>
-
+    </div>
   </div>
 </main>
 
