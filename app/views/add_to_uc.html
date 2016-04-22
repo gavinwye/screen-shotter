@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Child Benefit Options</h1>
+      <p class="lede">Here is what you are able to get:</p>
+      <form>
+        <fieldset class="form-group">
+          <legend class="visuallyhidden">Here is what you are able to get:</legend>
+          <label class="block-label" for="child-benefits-radio">
+            <input id="child-benefits-radio" type="radio" name="radio-group" value="Child Benefits">Child Benefits
+        </fieldset>
+        <a href="updated-details" class="button">Add to Universal Credits</a>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
