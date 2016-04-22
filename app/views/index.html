@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Child Benefit Prototype
+Financhal help when you have a child
 {% endblock %}
 
 {% block content %}
@@ -10,16 +10,17 @@ Child Benefit Prototype
   <div class="grid-row">
 
     <div class="column-two-thirds">
-      <h1 class="heading-xlarge">Apply for Child related benefits</h1>
+      <h1 class="heading-xlarge">Financhal help when you have a child</h1>
       <p class="lede">If you have recently had a baby there are certain benefits that you may be elegible for. </p>
       <p>They are:</p>
 
       <ul class="list list-bullet">
         <li>Child Benefit</li>
         <li>Child Tax Credits</li>
+        <li>Universal Credit</li>
       </ul>
 
-      <p>If you are recieving Universal Credit there are child related sections of that.</p>
+      <!-- <p>If you are recieving Universal Credit there are child related sections of that.</p> -->
 
       <h3 class="heading-medium">Sign in to check your elegbility</h3>
       <p><a class="button button-start" href="http://2fa:auth@twofactor-prototype.herokuapp.com/01_govuk-login_sa?url={{redirect}}/auth_success&failUrl={{redirect}}/auth_fail">Sign in</a></p>
