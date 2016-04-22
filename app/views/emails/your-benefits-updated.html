@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p class="lede">Child benefit updated</p>
+      <p>Your child benefit policy has been updated with the new information.</p>
+      <table class="form-group">
+        <thead>
+          <tr>
+            <th colspan="2">Your details breakdown</th>
+          <tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Child benefit payment for Britney:</td>
+            <td>£89.70</td>
+          </tr>	
+          <tr>
+            <td>Child benefit payment for Myla:</td>
+            <td>£59.36</td>
+          </tr>
+          <tr>
+            <td>Universal Credit</td>
+            <td>£200.00</td>
+          </tr>
+          <tr>
+            <td>Your new monthly payment</td>
+            <td>£349.06</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a href="#">View your universal credit</a></p>
+      <p><a href="#">Get email confirmation</a></p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
