@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">The child's gender</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium">Is the child you are claiming for</h2>
+
+            <form>
+                <fieldset class="form-group">
+                    <legend class="visuallyhidden">Is the child you are claiming for</legend>
+                    <!-- <span class="form-hint">Select all that apply.</span> -->
+                    <label class="block-label" for="child-benefits-radio">
+                        Male
+                        <input id="child-benefits-radio" type="radio" name="radio-group" value="Child Benefits">
+                    </label>
+                    <label class="block-label" for="child-benefits-radio">
+                        Female
+                        <input id="child-benefits-radio" type="radio" name="radio-group" value="Child Benefits">
+                    </label>
+                </fieldset>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

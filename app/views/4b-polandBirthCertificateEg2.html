@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Child registered in Poland</h1>
+            <p class="lede">Because the child you are claiming for was registered in Poland you need to send us the birth certificate. You can continue with this claim and send us your birth certifcate. We will back date your claim three months from the date you submit the claim</p>
+            <h2 class="bold-medium"></h2>
+
+            <form>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}
