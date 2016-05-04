@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Child benefit reference number</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium">What is the child benefit reference number?</h2>
+
+            <form>
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">What is the child benefit reference number?</legend>
+                    <div class="form-group">
+                        <label class="form-label">
+                            CHB
+                            <input type="text"/>
+                            <input class="input--xsmall" type="number" pattern="[0-9]*" min="0" max="12" name="year"/>
+                        </label>
+                    </div>
+                </fieldset>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
