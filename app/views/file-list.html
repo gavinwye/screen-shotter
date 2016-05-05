@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">File List</h1>
+
+      <ul id="foldertree">
+        {% if files %}
+          {{ files }}
+        {% else %}
+          no items
+        {% endif %}
+      </ul>
+
+    </div>
+  </div>
+</main>
+
+<script type="text/javascript">
+
+  var thing = (function(document){
+    var container = document.getElementById("foldertree");
+    var files = container.innerHTML;
+    files = files.replace(/,/g, '');
+    container.innerHTML = files;
+  })(document);
+
+  document.addEventListener('DOMContentLoaded', thing, false);
+
+</script>
+
+{% endblock %}
