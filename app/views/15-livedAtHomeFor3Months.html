@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Lived at home for three months</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium">Have you lived at 64 Grange Road for three months?</h2>
+
+            <form>
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">Have you lived at 64 Grange Road for three months?</legend>
+                    <label class="block-label" for="radio-inline-1">
+                        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                        Yes
+                    </label>
+                    <label class="block-label" for="radio-inline-2">
+                        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                        No
+                    </label>
+                </fieldset>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
