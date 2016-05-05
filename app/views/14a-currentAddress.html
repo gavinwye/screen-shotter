@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Current address</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium">Please tell us about your current address</h2>
+
+            <form>
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">Please tell us about your current address</legend>
+                    <div class="form-group">
+                        <label class="form-label">Postcode</label>
+                        <input type="text" class="form-control form-control--block"/>
+                    </div>
+                </fieldset>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
