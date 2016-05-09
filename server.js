@@ -10,6 +10,8 @@ var path = require('path'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
     packageJson = require(__dirname + '/package.json'),
+    session    = require('express-session'),
+    cookieParse = require('cookie-parser'),
 
 // Grab environment variables specified in Procfile or as Heroku config vars
     releaseVersion = packageJson.version;
@@ -20,6 +22,13 @@ var path = require('path'),
 
     env      = env.toLowerCase();
     useAuth  = useAuth.toLowerCase();
+
+//session variables
+app.use(session({
+secret: '6751386998',
+saveUninitialized: true,
+resave: true
+}));
 
 // Authenticate against the environment-provided credentials, if running
 // the app in production (Heroku, effectively)

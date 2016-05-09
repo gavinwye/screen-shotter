@@ -2,6 +2,18 @@ var express = require('express');
 var router = express.Router();
 var config = require('./config');
 var fs = require('fs');
+var bodyParser = require('body-parser'); // for reading POSTed form data into `req.body`
+var expressSession = require('express-session');
+var cookieParser = require('cookie-parser'); // the session is stored in a cookie, so we use this to parse it
+
+var app = express();
+
+// must use cookieParser before expressSession
+app.use(cookieParser());
+
+app.use(expressSession({secret:'somesecrettokenhere'}));
+
+app.use(bodyParser());
 
 router.get('/', function (req, res) {
 
@@ -76,6 +88,16 @@ router.get('/examples/over-18', function (req, res) {
 
   }
 
+});
+
+router.post('/2-20OrOver', function(req, res) {
+  req.session.over16 = req.body['over16'];
+  console.log(req.session.over16);
+  if (req.session.over16 == "no"){
+     res.redirect("/3a-childBornInUK");
+   } else {
+     res.render("2-20OrOver");
+   }
 });
 
 // add your routes here
