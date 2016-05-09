@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Would you like your child benefit to be paid to the bank we have on record</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium"></h2>
+
+            <form>
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">Would you like your child benefit to be paid to the bank we have on record</legend>
+                    <div class="form-group">
+                        <label class="form-label">
+                            Lloyds Bank
+                        </label>
+                        <label class="form-label">
+                            ****5678
+                        </label>
+                        <label class="form-label">
+                            20-73-40
+                        </label>
+                    </div>
+                    <label class="block-label" for="radio-inline-1">
+                        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                        Yes
+                    </label>
+                    <label class="block-label" for="radio-inline-2">
+                        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                        No
+                    </label>
+                </fieldset>
+                <!-- <input class="button" type="submit" value="Continue"> -->
+                <a href="check-your-details" class="button">Continue</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
