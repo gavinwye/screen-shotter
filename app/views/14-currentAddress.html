@@ -14,7 +14,7 @@ Child Benefit Prototype
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form>
+            <form action="/15-livedAtHomeFor3Months" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">Is this your current address?</legend>
                     <div class="form-group">
@@ -23,16 +23,17 @@ Child Benefit Prototype
                         <label class="form-label">M29 12B</label>
                     </div>
                     <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                        <input id="radio-inline-1" type="radio" name="currentAddress" value="yes">
                         Yes
                     </label>
                     <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                        <input id="radio-inline-2" type="radio" name="currentAddress" value="no">
                         No
                     </label>
                 </fieldset>
-                <!-- <input class="button" type="submit" value="Continue"> -->
-                <a href="check-your-details" class="button">Continue</a>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
             </form>
         </div>
     </div>
