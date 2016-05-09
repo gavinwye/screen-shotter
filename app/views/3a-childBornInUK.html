@@ -17,20 +17,21 @@ Child Benefit Prototype
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form>
+            <form action="/4a-whereInUkWasChildBorn" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">Was the child's birth registered in the United Kingdom?</legend>
                     <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                        <input id="radio-inline-1" type="radio" name="ukBirth" value="yes">
                         Yes
                     </label>
                     <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                        <input id="radio-inline-2" type="radio" name="ukBirth" value="no">
                         No
                     </label>
                 </fieldset>
-                <!-- <input class="button" type="submit" value="Continue"> -->
-                <a href="check-your-details" class="button">Continue</a>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
             </form>
         </div>
     </div>

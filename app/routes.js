@@ -90,6 +90,9 @@ router.get('/examples/over-18', function (req, res) {
 
 });
 
+/************************
+* Over 16 *
+*************************/
 router.post('/2-20OrOver', function(req, res) {
   req.session.over16 = req.body['over16'];
   console.log(req.session.over16);
@@ -100,6 +103,42 @@ router.post('/2-20OrOver', function(req, res) {
    }
 });
 
-// add your routes here
+/************************
+* UK Birth
+************************/
+router.post('/4a-whereInUkWasChildBorn', function(req, res) {
+  req.session.ukBirth = req.body['ukBirth'];
+  console.log(req.session.ukBirth);
+  if(req.session.ukBirth == "no") {
+    res.redirect("/3b-childCountryOfBirth");
+  } else {
+    res.render("4a-whereInUkWasChildBorn");
+  }
+});
+
+/***********************
+* Where in the UK
+************************/
+router.post('/5a-dateOfBirth', function(req,res) {
+  req.session.ukBirthCountry = req.body['ukBirthCountry'];
+  console.log(req.session.ukBirthCountry);
+  if(req.session.ukBirthCountry == "england" || req.session.ukBirthCountry == "scotland" || req.session.ukBirthCountry == "wales") {
+    res.redirect("/5a-dateOfBirth");
+  } else {
+    res.redirect("/5b-uploadBirthCertificate");
+  }
+});
+
+/*********************
+* Date of Birth
+**********************/
+router.post('/5b-childGender', function(req, res) {
+  req.session.dobDay = req.body['dobDay'];
+  req.session.dobMonth = req.body['dobMonth'];
+  req.session.dobYear = req.body['dobYear'];
+  console.log(req.session.dobDay)
+  console.log(req.session.dobMonth)
+  console.log(req.session.dobYear)
+});
 
 module.exports = router;
