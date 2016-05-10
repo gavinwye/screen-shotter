@@ -7,7 +7,7 @@ var config = {
   hostname: "cb-prototype",
 
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: "Financial help when you have a child",
+  serviceName: "Child Benefit ",
 
   // Default port that prototype runs on
   port: '3001',

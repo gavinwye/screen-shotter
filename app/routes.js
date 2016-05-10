@@ -162,6 +162,8 @@ router.post('/11-areYouMakingClaimForSomeoneElse', function(req, res) {
   res.redirect('/11-areYouMakingClaimForSomeoneElse');
 });
 
+
+
 /******************
 * Claiming on behalf
 ******************/
@@ -286,6 +288,6 @@ router.post('/24-paymentDetails', function(req, res) {
   } else {
     res.redirect('/prototype');
   }
-})
+});
 
 module.exports = router;
