@@ -154,7 +154,11 @@ router.post('/7-nameOfChild', function(req, res) {
 /******************
 * Name of Child
 ******************/
-router.post('/11-areYouMakingClaimForSomeoneElse', function(req, res) {
+router.all('/7-nameOfChild', function(req,res){
+	res.render('7-nameOfChild.html', {'form_action' : '/store-child-names' });
+});
+
+router.post('/store-child-names', function (req,res){
   req.session.childFirstName = req.body['childFirstName'];
   req.session.childLastName = req.body['childLastName'];
   console.log(req.session.childFirstName);
@@ -162,7 +166,9 @@ router.post('/11-areYouMakingClaimForSomeoneElse', function(req, res) {
   res.redirect('/11-areYouMakingClaimForSomeoneElse');
 });
 
-
+router.all('/24-paymentDetails', function(req,res){
+  res.render('24-paymentDetails', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
+});
 
 /******************
 * Claiming on behalf
