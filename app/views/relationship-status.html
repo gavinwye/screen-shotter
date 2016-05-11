@@ -10,29 +10,25 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Where in the UK was the child's birth registered?</h1>
+            <h1 class="heading-xlarge">Are you</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="5a-dateOfBirth" method="post" class="form">
+            <form action="/partner-earnings" method="post" class="form">
                 <fieldset class="form-group">
-                    <legend class="visuallyhidden">Where in the UK was the child's birth registered?</legend>
+                    <legend class="visuallyhidden">Are you</legend>
                     <!-- <span class="form-hint">Select all that apply.</span> -->
                     <label class="block-label" for="child-benefits-radio">
-                        England
-                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="england">
+                        Married
+                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="married">
                     </label>
                     <label class="block-label" for="child-benefits-radio">
-                        Scotland
-                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="scotland">
+                        Single
+                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="single">
                     </label>
                     <label class="block-label" for="child-benefits-radio">
-                        Wales
-                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="walesa">
-                    </label>
-                    <label class="block-label" for="child-benefits-radio">
-                        Northern Ireland
-                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="northernIreland">
+                        Living with a partner
+                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="livingwithpartner">
                     </label>
                 </fieldset>
                 <div class="form-group">

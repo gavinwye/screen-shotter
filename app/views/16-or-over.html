@@ -10,22 +10,19 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Is this your current address?</h1>
+            <h1 class="heading-xlarge">Is the child you are claiming for 16 or over?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="/15-livedAtHomeFor3Months" method="post" class="form">
+            <form action="/20-or-over" method="post" class="form">
                 <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Is this your current address?</legend>
-                      <p>64 Grange Road<br>
-                      Manchester<br>
-                      M29 12B</p>
-                    <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="currentAddress" value="yes">
+                    <legend class="visuallyhidden">Is the child you are claiming for 16 or over?</legend>
+                    <label class="block-label" for="over16">
+                        <input id="radio-inline-1" type="radio" name="over16" value="yes">
                         Yes
                     </label>
-                    <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="currentAddress" value="no">
+                    <label class="block-label" for="over16">
+                        <input id="radio-inline-2" type="radio" name="over16" value="no">
                         No
                     </label>
                 </fieldset>

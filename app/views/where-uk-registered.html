@@ -10,25 +10,29 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Are you</h1>
+            <h1 class="heading-xlarge">Where in the UK was the child's birth registered?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="/21-partnerEarnings" method="post" class="form">
+            <form action="date-of-birth" method="post" class="form">
                 <fieldset class="form-group">
-                    <legend class="visuallyhidden">Are you</legend>
+                    <legend class="visuallyhidden">Where in the UK was the child's birth registered?</legend>
                     <!-- <span class="form-hint">Select all that apply.</span> -->
                     <label class="block-label" for="child-benefits-radio">
-                        Married
-                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="married">
+                        England
+                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="england">
                     </label>
                     <label class="block-label" for="child-benefits-radio">
-                        Single
-                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="single">
+                        Scotland
+                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="scotland">
                     </label>
                     <label class="block-label" for="child-benefits-radio">
-                        Living with a partner
-                        <input id="child-benefits-radio" type="radio" name="relationshipStatus" value="livingwithpartner">
+                        Wales
+                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="walesa">
+                    </label>
+                    <label class="block-label" for="child-benefits-radio">
+                        Northern Ireland
+                        <input id="child-benefits-radio" type="radio" name="ukBirthCountry" value="northernIreland">
                     </label>
                 </fieldset>
                 <div class="form-group">

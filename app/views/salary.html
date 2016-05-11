@@ -10,19 +10,19 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Does this child live with you permanently?</h1>
+            <h1 class="heading-xlarge">We think your current salary is £45,000. Is this correct?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="14-currentAddress" method="post" class="form">
+            <form action="/relationship-status" method="post" class="form">
                 <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Does this child live with you permanently?</legend>
+                    <legend class="visuallyhidden">We think your current salary is £45,000. Is this correct?</legend>
                     <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="liveWithChild" value="yes">
+                        <input id="radio-inline-1" type="radio" name="correctSalary" value="yes">
                         Yes
                     </label>
                     <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="liveWithChild" value="no">
+                        <input id="radio-inline-2" type="radio" name="correctSalary" value="no">
                         No
                     </label>
                 </fieldset>

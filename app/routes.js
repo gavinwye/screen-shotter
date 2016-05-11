@@ -93,69 +93,69 @@ router.get('/examples/over-18', function (req, res) {
 /************************
 * Over 16 *
 *************************/
-router.post('/2-20OrOver', function(req, res) {
+router.post('/20-or-over', function(req, res) {
   req.session.over16 = req.body['over16'];
   console.log(req.session.over16);
   if (req.session.over16 == "no"){
-     res.redirect("/3a-childBornInUK");
+     res.redirect("/child-uk-born");
    } else {
-     res.render("2-20OrOver");
+     res.render("20-or-over");
    }
 });
 
 /************************
 * UK Birth
 ************************/
-router.post('/4a-whereInUkWasChildBorn', function(req, res) {
+router.post('/where-uk-registered', function(req, res) {
   req.session.ukBirth = req.body['ukBirth'];
   console.log(req.session.ukBirth);
   if(req.session.ukBirth == "no") {
-    res.redirect("/3b-childCountryOfBirth");
+    res.redirect("/child-country-birth");
   } else {
-    res.render("4a-whereInUkWasChildBorn");
+    res.render("where-uk-registered");
   }
 });
 
 /***********************
 * Where in the UK
 ************************/
-router.post('/5a-dateOfBirth', function(req,res) {
+router.post('/date-of-birth', function(req,res) {
   req.session.ukBirthCountry = req.body['ukBirthCountry'];
   console.log(req.session.ukBirthCountry);
   if(req.session.ukBirthCountry == "england" || req.session.ukBirthCountry == "scotland" || req.session.ukBirthCountry == "wales") {
-    res.redirect("/5a-dateOfBirth");
+    res.redirect("/date-of-birth");
   } else {
-    res.redirect("/5b-uploadBirthCertificate");
+    res.redirect("/upload-birth-certificate");
   }
 });
 
 /*********************
 * Date of Birth
 **********************/
-router.post('/5b-childGender', function(req, res) {
+router.post('/child-gender', function(req, res) {
   req.session.dobDay = req.body['dobDay'];
   req.session.dobMonth = req.body['dobMonth'];
   req.session.dobYear = req.body['dobYear'];
   console.log(req.session.dobDay)
   console.log(req.session.dobMonth)
   console.log(req.session.dobYear)
-  res.redirect('/5b-childGender');
+  res.redirect('/child-gender');
 });
 
 /*******************
 * Gender
 *******************/
-router.post('/7-nameOfChild', function(req, res) {
+router.post('/name-of-child', function(req, res) {
   req.session.gender = req.body['gender'];
   console.log(req.session.gender);
-  res.redirect('/7-nameOfChild');
+  res.redirect('/name-of-child');
 });
 
 /******************
 * Name of Child
 ******************/
-router.all('/7-nameOfChild', function(req,res){
-	res.render('7-nameOfChild.html', {'form_action' : '/store-child-names' });
+router.all('/name-of-child', function(req,res){
+	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
 });
 
 router.post('/store-child-names', function (req,res){
@@ -163,86 +163,86 @@ router.post('/store-child-names', function (req,res){
   req.session.childLastName = req.body['childLastName'];
   console.log(req.session.childFirstName);
   console.log(req.session.childLastName);
-  res.redirect('/11-areYouMakingClaimForSomeoneElse');
+  res.redirect('/claim-on-behalf');
 });
 
-router.all('/24-paymentDetails', function(req,res){
-  res.render('24-paymentDetails', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
+router.all('/payment-details', function(req,res){
+  res.render('payment-details', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
 });
 
 /******************
 * Claiming on behalf
 ******************/
-router.post('/12-doesChildLiveWithYou', function(req, res) {
+router.post('/living-with-child', function(req, res) {
   req.session.childBehalf = req.body['childBehalf'];
   console.log(req.session.childBehalf);
   if(req.session.childBehalf == "yes") {
-    res.redirect('/17a-cannotMakeClaim')
+    res.redirect('/cannot-make-claim')
   } else {
-    res.redirect('12-doesChildLiveWithYou');
+    res.redirect('living-with-child');
   }
 });
 
 /*****************
 * Child live with you
 *****************/
-router.post('/14-currentAddress', function(req, res) {
+router.post('/current-address', function(req, res) {
   req.session.liveWithChild = req.body['liveWithChild'];
   console.log(req.session.liveWithChild);
   if(req.session.liveWithChild == "yes") {
-    res.redirect('/14-currentAddress');
+    res.redirect('/current-address');
   } else {
-    res.redirect('/13-contributeToCostOfLiving');
+    res.redirect('/contribute');
   }
 });
 
 /*******************
 * Current address
 *******************/
-router.post('/15-livedAtHomeFor3Months', function(req, res) {
+router.post('/home-for-three-months', function(req, res) {
   req.session.currentAddress = req.body['currentAddress'];
   console.log(req.session.currentAddress);
   if(req.session.currentAddress == "yes") {
-    res.redirect('/15-livedAtHomeFor3Months');
+    res.redirect('/home-for-three-months');
   } else {
-    res.redirect('14a-currentAddress');
+    res.redirect('current-address-2');
   }
 });
 
 /******************************
 * Lived at home for 3 months
 ******************************/
-router.post('/16-stayingInUK', function(req, res) {
+router.post('/staying-in-uk', function(req, res) {
   req.session.monthsLived = req.body['monthsLived'];
   console.log(req.session.monthsLived);
   if(req.session.monthsLived == "yes") {
-    res.redirect('/16-stayingInUK');
+    res.redirect('/staying-in-uk');
   } else {
-    res.redirect('/16a-previousAddress');
+    res.redirect('/previous-address');
   }
 });
 
 /*************************************
 * Staying in UK
 **************************************/
-router.post('/19a-correctSalary', function(req, res) {
+router.post('/salary', function(req, res) {
   req.session.stayingInUK = req.body['stayingInUK'];
   console.log(req.session.stayingInUK);
   if(req.session.stayingInUK == "yes") {
-    res.redirect('/19a-correctSalary');
+    res.redirect('/salary');
   } else {
-    res.redirect('/6b-end');
+    res.redirect('/end-2');
   }
 })
 
 /*******************
 * Current Salary
 *******************/
-router.post('/20-relationshipStatus', function(req, res) {
+router.post('/relationship-status', function(req, res) {
   req.session.correctSalary = req.body['correctSalary'];
   console.log(req.session.correctSalary);
   if(req.session.correctSalary == "yes") {
-    res.redirect('/20-relationshipStatus');
+    res.redirect('/relationship-status');
   } else {
     res.redirect('/prototype');
   }
@@ -251,13 +251,13 @@ router.post('/20-relationshipStatus', function(req, res) {
 /********************
 * Relationship Status
 ********************/
-router.post('/21-partnerEarnings', function(req, res) {
+router.post('/partner-earnings', function(req, res) {
   req.session.relationshipStatus = req.body['relationshipStatus'];
   console.log(req.session.relationshipStatus);
   if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
-    res.redirect('/21-partnerEarnings');
+    res.redirect('/partner-earnings');
   } else {
-    res.redirect('/22-childBenefitPayPreference');
+    res.redirect('/pay-preference');
   }
 });
 
@@ -270,27 +270,27 @@ router.post('/prototype', function(req, res) {
   if(req.session.partnerEarnings == "yes") {
     res.redirect('/prototype');
   } else {
-    res.redirect('/22-childBenefitPayPreference');
+    res.redirect('/pay-preference');
   }
 });
 
 /*************************
 * Pay Preference
 *************************/
-router.post('/23-bankDetails', function(req, res) {
+router.post('/bank-details', function(req, res) {
   req.session.payPreference = req.body['payPreference'];
   console.log(req.session.payPreference);
-  res.redirect('/23-bankDetails');
+  res.redirect('/bank-details');
 });
 
 /***********************
 * Bank Details
 ***********************/
-router.post('/24-paymentDetails', function(req, res) {
+router.post('/payment-details', function(req, res) {
   req.session.bankDetails = req.body['bankDetails'];
   console.log(req.session.bankDetails);
   if(req.session.bankDetails == "yes") {
-    res.redirect('/24-paymentDetails');
+    res.redirect('/payment-details');
   } else {
     res.redirect('/prototype');
   }

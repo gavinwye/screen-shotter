@@ -10,21 +10,21 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Is the child you are claiming for</h1>
+            <h1 class="heading-xlarge">Would you like child benefit to be paid</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="/7-nameOfChild" method="post" class="form">
+            <form action="/bank-details" method="post" class="form">
                 <fieldset class="form-group">
-                    <legend class="visuallyhidden">Is the child you are claiming for</legend>
+                    <legend class="visuallyhidden">Would you like child benefit to be paid</legend>
                     <!-- <span class="form-hint">Select all that apply.</span> -->
                     <label class="block-label" for="child-benefits-radio">
-                        Male
-                        <input id="child-benefits-radio" type="radio" name="gender" value="male">
+                        Weekly
+                        <input id="child-benefits-radio" type="radio" name="payPreference" value="weekly">
                     </label>
                     <label class="block-label" for="child-benefits-radio">
-                        Female
-                        <input id="child-benefits-radio" type="radio" name="gender" value="female">
+                        Monthly
+                        <input id="child-benefits-radio" type="radio" name="payPreference" value="monthly">
                     </label>
                 </fieldset>
                 <div class="form-group">

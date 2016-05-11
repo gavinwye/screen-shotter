@@ -5,27 +5,27 @@ Child Benefit Prototype
 {% endblock %}
 
 {% block content %}
-<script>
-  console.log(localStorage.getItem("test"));
-</script>
 
 <main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Was the child's birth registered in the United Kingdom?</h1>
+            <h1 class="heading-xlarge">Would you like your child benefit to be paid to the bank we have on record</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form action="/4a-whereInUkWasChildBorn" method="post" class="form">
+            <form action="/payment-details" method="post" class="form">
                 <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Was the child's birth registered in the United Kingdom?</legend>
+                    <legend class="visuallyhidden">Would you like your child benefit to be paid to the bank we have on record</legend>
+                        <p>Lloyds Bank<br>
+                            ****5678<br>
+                            20-73-40</p>
                     <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="ukBirth" value="yes">
+                        <input id="radio-inline-1" type="radio" name="bankDetails" value="yes">
                         Yes
                     </label>
                     <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="ukBirth" value="no">
+                        <input id="radio-inline-2" type="radio" name="bankDetails" value="no">
                         No
                     </label>
                 </fieldset>
