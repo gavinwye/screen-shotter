@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">We think your current salary is £45,000. Is this correct?</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium"></h2>
+
+            <form action="/relationship-status" method="post" class="form">
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">We think your current salary is £45,000. Is this correct?</legend>
+                    <label class="block-label" for="radio-inline-1">
+                        <input id="radio-inline-1" type="radio" name="correctSalary" value="yes">
+                        Yes
+                    </label>
+                    <label class="block-label" for="radio-inline-2">
+                        <input id="radio-inline-2" type="radio" name="correctSalary" value="no">
+                        No
+                    </label>
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
