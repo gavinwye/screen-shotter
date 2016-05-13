@@ -1,0 +1,27 @@
+{
+  "name": "child-benefit-prototype",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "PASSWORD": {
+      "required": true
+    },
+    "USERNAME": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
