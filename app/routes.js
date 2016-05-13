@@ -32,37 +32,6 @@ router.get('/', function (req, res) {
 
 // Passing data into a page
 
-router.get('/file-list', function(req, res) {
-
-  var markup = function(files, callback) {
-
-    var items = [];
-    for (i = 0; i < files.length; i++) {
-      var q = files[i];
-      q = q.slice(0, -5);
-      var markup = '<li>' + '<a href="' + q + '">' + q + '</a>' + '</li>';
-      items.push(markup);
-    };
-    callback(items);
-  };
-
-
-  var getFiles = function(callback) {
-    fs.readdir(__dirname + '/views', function (err, files) { // '/' denotes the root folder
-      if (err) throw err;
-      markup(files, callback)
-    });
-  };
-
-  getFiles(function(items){
-
-    // render markup for items
-
-
-    res.render('file-list', { 'files' : items });
-  });
-});
-
 router.get('/examples/template-data', function (req, res) {
 
   res.render('examples/template-data', { 'name' : 'Foo' });
@@ -90,6 +59,7 @@ router.get('/examples/over-18', function (req, res) {
 
 });
 
+
 module.exports = router;
 
 module.exports = {
@@ -99,6 +69,8 @@ module.exports = {
       res.render('index');
     });
 
-    require('./custom-routes.js')(router);
+  require('./routes-filelist')(router);
+  require('./custom-routes')(router);
+
   }
 };
