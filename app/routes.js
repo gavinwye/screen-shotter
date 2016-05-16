@@ -32,6 +32,7 @@ router.get('/', function (req, res) {
 
 // Passing data into a page
 
+<<<<<<< HEAD
 router.get('/file-list', function(req, res) {
 
   var markup = function(files, callback) {
@@ -63,6 +64,8 @@ router.get('/file-list', function(req, res) {
   });
 });
 
+=======
+>>>>>>> journey-1
 router.get('/examples/template-data', function (req, res) {
 
   res.render('examples/template-data', { 'name' : 'Foo' });
@@ -90,6 +93,7 @@ router.get('/examples/over-18', function (req, res) {
 
 });
 
+<<<<<<< HEAD
 /************************
 * Over 16 *
 *************************/
@@ -297,3 +301,20 @@ router.post('/payment-details', function(req, res) {
 });
 
 module.exports = router;
+=======
+
+module.exports = router;
+
+module.exports = {
+  bind : function (router) {
+
+    router.get('/', function (req, res) {
+      res.render('index');
+    });
+
+  require('./routes-filelist')(router);
+  require('./custom-routes')(router);
+
+  }
+};
+>>>>>>> journey-1

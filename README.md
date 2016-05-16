@@ -1,5 +1,4 @@
-# child-benefit-prototype
-
+# cb-prototype
 Child Benefit prototype
 
 https://github.tools.tax.service.gov.uk/DDCN/cb-prototype
@@ -56,4 +55,8 @@ node start.js
 **NOTE:** You need to be logged into heroku through the toolbelt
 ```heroku login```
 
+<<<<<<< HEAD
 **NOTE:** You may encounter an issue regarding permissions to push to the repository (public key), [you need to upload your ssh key to heroku](https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku).
+=======
+**NOTE:** You may encounter an issue regarding permissions to push to the repository (public key), [you need to upload your ssh key to heroku](https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku).
+>>>>>>> journey-1
