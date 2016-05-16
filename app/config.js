@@ -4,7 +4,7 @@ var util = require("util");
 
 var config = {
 
-  hostname: "cb-journey-1",
+  hostname: "cb-prototype",
 
   // Service name used in header. Eg: 'Renew your passport'
   serviceName: "Child Benefit ",
