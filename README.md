@@ -71,4 +71,4 @@ user-research	git@heroku.com:cb-user-research.git (fetch)
 what-if	git@heroku.com:cb-what-if.git (fetch)
 what-if	git@heroku.com:cb-what-if.git (push)
 
-Remotes can be added to git using the command ```git remote add [name] [url]```
+Remotes can be added to git using the command ```git remote add [name] [url]``` see the git docs for more information.
