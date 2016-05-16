@@ -55,8 +55,20 @@ node start.js
 **NOTE:** You need to be logged into heroku through the toolbelt
 ```heroku login```
 
-<<<<<<< HEAD
 **NOTE:** You may encounter an issue regarding permissions to push to the repository (public key), [you need to upload your ssh key to heroku](https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku).
-=======
-**NOTE:** You may encounter an issue regarding permissions to push to the repository (public key), [you need to upload your ssh key to heroku](https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku).
->>>>>>> journey-1
+
+#### Remotes
+This prototype is deployed to the following remotes:
+
+heroku	https://git.heroku.com/child-benefit-prototype.git (push)
+heroku	https://git.heroku.com/child-benefit-prototype.git (fetch)
+hmrc	git@github.tools.tax.service.gov.uk:DDCN/cb-prototype.git (fetch)
+hmrc	git@github.tools.tax.service.gov.uk:DDCN/cb-prototype.git (push)
+origin	git@github.com:gavinwye/child-benefit-prototype.git (fetch)
+origin	git@github.com:gavinwye/child-benefit-prototype.git (push)
+user-research	git@heroku.com:cb-user-research.git (push)
+user-research	git@heroku.com:cb-user-research.git (fetch)
+what-if	git@heroku.com:cb-what-if.git (fetch)
+what-if	git@heroku.com:cb-what-if.git (push)
+
+Remotes can be added to git using the command ```git remote add [name] [url]```
