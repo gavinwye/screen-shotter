@@ -1,6 +1,6 @@
+var config = require('./config');
 var express = require('express');
 var router = express.Router();
-var config = require('./config');
 var fs = require('fs');
 var bodyParser = require('body-parser'); // for reading POSTed form data into `req.body`
 var expressSession = require('express-session');
@@ -63,9 +63,9 @@ module.exports = router;
 module.exports = {
   bind : function (router) {
 
-    router.get('/', function (req, res) {
-      res.render('index');
-    });
+    // router.get('/', function (req, res) {
+    //   res.render('index');
+    // });
 
   require('./routes-filelist')(router);
   require('./custom-routes')(router);
