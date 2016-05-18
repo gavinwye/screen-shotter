@@ -5,7 +5,7 @@ module.exports = function (router) {
   router.post('/20-or-over', function(req, res) {
     req.session.over16 = req.body['over16'];
     console.log(req.session.over16);
-    if (req.session.over16 == "no"){
+    if (req.session.over16 == "yes"){
        res.redirect("/child-uk-born");
      } else {
        res.render("20-or-over");
@@ -140,7 +140,7 @@ module.exports = function (router) {
     if(req.session.stayingInUK == "yes") {
       res.redirect('/salary');
     } else {
-      res.redirect('/end-2');
+      res.redirect('/prototype');
     }
   })
 
@@ -199,7 +199,7 @@ module.exports = function (router) {
     req.session.bankDetails = req.body['bankDetails'];
     console.log(req.session.bankDetails);
     if(req.session.bankDetails == "yes") {
-      res.redirect('/payment-details');
+      res.redirect('/prototype');
     } else {
       res.redirect('/prototype');
     }
