@@ -58,7 +58,21 @@ module.exports = function (router) {
   /***********************
   * Where in the UK
   ************************/
-  router.post('/date-of-birth', function(req,res) {
+//  router.post('/date-of-birth', function(req,res) {
+//    req.session.ukBirthCountry = req.body['ukBirthCountry'];
+//    console.log(req.session.ukBirthCountry);
+//    if(req.session.ukBirthCountry == "england" || req.session.ukBirthCountry == "scotland" || req.session.ukBirthCountry == "wales") {
+//      res.redirect("/date-of-birth");
+//    } else {
+//      res.redirect("/upload-birth-certificate");
+//    }
+//  });
+
+  router.all('/where-uk-registered', function(req, res) {
+    res.render('where-uk-registered', {'form_action' : '/store-uk-registered' });
+  });
+
+  router.post('/store-uk-registered', function (req, res) {
     req.session.ukBirthCountry = req.body['ukBirthCountry'];
     console.log(req.session.ukBirthCountry);
     if(req.session.ukBirthCountry == "england" || req.session.ukBirthCountry == "scotland" || req.session.ukBirthCountry == "wales") {
@@ -71,20 +85,44 @@ module.exports = function (router) {
   /*********************
   * Date of Birth
   **********************/
-  router.post('/child-gender', function(req, res) {
+//  router.post('/child-gender', function(req, res) {
+//    req.session.dobDay = req.body['dobDay'];
+//    req.session.dobMonth = req.body['dobMonth'];
+//    req.session.dobYear = req.body['dobYear'];
+//    console.log(req.session.dobDay)
+//    console.log(req.session.dobMonth)
+//    console.log(req.session.dobYear)
+//    res.redirect('/child-gender');
+//  });
+
+  router.all('/date-of-birth', function(req, res) {
+    res.render('date-of-birth', {'form_action' : '/store-dob' });
+  });
+
+  router.post('/store-dob', function (req, res) {
     req.session.dobDay = req.body['dobDay'];
     req.session.dobMonth = req.body['dobMonth'];
     req.session.dobYear = req.body['dobYear'];
-    console.log(req.session.dobDay)
-    console.log(req.session.dobMonth)
-    console.log(req.session.dobYear)
+    console.log(req.session.dobDay);
+    console.log(req.session.dobMonth);
+    console.log(req.session.dobYear);
     res.redirect('/child-gender');
   });
 
   /*******************
   * Gender
   *******************/
-  router.post('/name-of-child', function(req, res) {
+//  router.post('/name-of-child', function(req, res) {
+//    req.session.gender = req.body['gender'];
+//    console.log(req.session.gender);
+//    res.redirect('/name-of-child');
+//  });
+
+  router.all('/child-gender', function(req, res) {
+    res.render('child-gender', {'form_action' : '/store-gender' });
+  });
+
+  router.post('/store-gender', function(req, res) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
     res.redirect('/name-of-child');
@@ -108,20 +146,48 @@ module.exports = function (router) {
   /******************
   * Claiming on behalf
   ******************/
-  router.post('/living-with-child', function(req, res) {
+//  router.post('/living-with-child', function(req, res) {
+//    req.session.childBehalf = req.body['childBehalf'];
+//    console.log(req.session.childBehalf);
+//    if(req.session.childBehalf == "yes") {
+//      res.redirect('/cannot-make-claim')
+//    } else {
+//      res.redirect('living-with-child');
+//    }
+//  });
+
+  router.all('/claim-on-behalf', function(req, res) {
+    res.render('claim-on-behalf', {'form_action' : '/store-claim-on-behalf' });
+  });
+
+  router.post('/store-claim-on-behalf', function(req, res) {
     req.session.childBehalf = req.body['childBehalf'];
     console.log(req.session.childBehalf);
     if(req.session.childBehalf == "yes") {
       res.redirect('/cannot-make-claim')
     } else {
-      res.redirect('living-with-child');
+      res.redirect('/living-with-child');
     }
-  });
+  }); 
 
   /*****************
   * Child live with you
   *****************/
-  router.post('/current-address', function(req, res) {
+//  router.post('/current-address', function(req, res) {
+//    req.session.liveWithChild = req.body['liveWithChild'];
+//    console.log(req.session.liveWithChild);
+//    if(req.session.liveWithChild == "yes") {
+//      res.redirect('/current-address');
+//    } else {
+//      res.redirect('/contribute');
+//    }
+//  });
+
+  router.all('/living-with-child', function(req, res) {
+    res.render('living-with-child', {'form_action' : '/store-living-with-child' });
+  });
+
+  router.post('/store-living-with-child', function(req, res) {
     req.session.liveWithChild = req.body['liveWithChild'];
     console.log(req.session.liveWithChild);
     if(req.session.liveWithChild == "yes") {
