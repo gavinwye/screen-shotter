@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Variables</h1>
+
+      <ul id="foldertree">
+        <li>16 or over? {{ 16over }}</li>
+        <li>UK Born? {{ ukBirth }}</li>
+        <li>Child Name: {{ name }}</;li>
+      </ul>
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

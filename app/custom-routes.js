@@ -2,26 +2,56 @@ module.exports = function (router) {
   /************************
   * Over 16 *
   *************************/
-  router.post('/20-or-over', function(req, res) {
+  // router.post('/20-or-over', function(req, res) {
+  //   req.session.over16 = req.body['over16'];
+  //   console.log(req.session.over16);
+  //   if (req.session.over16 == "no"){
+  //      res.redirect("/child-uk-born");
+  //    } else {
+  //      res.render("20-or-over");
+  //    }
+  // });
+
+  // current page
+  router.all('/16-or-over', function(req, res) {
+    res.render('16-or-over', {'form_action' : '/store-16-or-over' });
+  });
+
+  // variable storing and page redirect on submission
+  router.post('/store-16-or-over', function (req,res) {
     req.session.over16 = req.body['over16'];
     console.log(req.session.over16);
     if (req.session.over16 == "no"){
        res.redirect("/child-uk-born");
      } else {
-       res.render("20-or-over");
+       res.redirect("/20-or-over");
      }
   });
 
   /************************
   * UK Birth
   ************************/
-  router.post('/where-uk-registered', function(req, res) {
+//  router.post('/where-uk-registered', function(req, res) {
+//    req.session.ukBirth = req.body['ukBirth'];
+//    console.log(req.session.ukBirth);
+//    if(req.session.ukBirth == "no") {
+//      res.redirect("/child-country-birth");
+//    } else {
+//      res.render("where-uk-registered");
+//    }
+//  });
+
+  router.all('/child-uk-born', function(req, res) {
+    res.render('child-uk-born', {'form_action' : '/store-uk-birth' });
+  });
+
+  router.post('/store-uk-birth', function (req, res) {
     req.session.ukBirth = req.body['ukBirth'];
     console.log(req.session.ukBirth);
     if(req.session.ukBirth == "no") {
       res.redirect("/child-country-birth");
     } else {
-      res.render("where-uk-registered");
+      res.redirect("/where-uk-registered");
     }
   });
 
@@ -73,10 +103,6 @@ module.exports = function (router) {
     console.log(req.session.childFirstName);
     console.log(req.session.childLastName);
     res.redirect('/claim-on-behalf');
-  });
-
-  router.all('/payment-details', function(req,res){
-    res.render('payment-details', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
   });
 
   /******************
@@ -203,6 +229,13 @@ module.exports = function (router) {
     } else {
       res.redirect('/prototype');
     }
+  });
+
+  /*********************
+  * Payment Details
+  *********************/
+  router.all('/payment-details', function(req,res){
+    res.render('payment-details', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
   });
 
 }
