@@ -79,6 +79,10 @@ module.exports = function (router) {
     res.render('payment-details', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
   });
 
+  router.all('/child-result', function(req, res) {
+    res.render('child-result', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
+  });
+
   /******************
   * Claiming on behalf
   ******************/
