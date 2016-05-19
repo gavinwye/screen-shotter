@@ -200,7 +200,21 @@ module.exports = function (router) {
   /*******************
   * Current address
   *******************/
-  router.post('/home-for-three-months', function(req, res) {
+//  router.post('/home-for-three-months', function(req, res) {
+//    req.session.currentAddress = req.body['currentAddress'];
+//    console.log(req.session.currentAddress);
+//    if(req.session.currentAddress == "yes") {
+//      res.redirect('/home-for-three-months');
+//    } else {
+//      res.redirect('current-address-2');
+//    }
+//  });
+
+  router.all('/current-address', function(req, res) {
+    res.render('current-address', {'form_action' : '/store-current-address' });
+  });
+
+  router.post('/store-current-address', function(req, res) {
     req.session.currentAddress = req.body['currentAddress'];
     console.log(req.session.currentAddress);
     if(req.session.currentAddress == "yes") {
@@ -213,7 +227,21 @@ module.exports = function (router) {
   /******************************
   * Lived at home for 3 months
   ******************************/
-  router.post('/staying-in-uk', function(req, res) {
+//  router.post('/staying-in-uk', function(req, res) {
+//    req.session.monthsLived = req.body['monthsLived'];
+//    console.log(req.session.monthsLived);
+//    if(req.session.monthsLived == "yes") {
+//      res.redirect('/staying-in-uk');
+//    } else {
+//      res.redirect('/previous-address');
+//    }
+//  });
+  
+  router.all('/home-for-three-months', function(req, res) {
+    res.render('home-for-three-months', {'form_action' : '/store-home-for-three-months' });
+  });
+
+  router.post('/store-home-for-three-months', function(req, res) {
     req.session.monthsLived = req.body['monthsLived'];
     console.log(req.session.monthsLived);
     if(req.session.monthsLived == "yes") {
@@ -226,7 +254,21 @@ module.exports = function (router) {
   /*************************************
   * Staying in UK
   **************************************/
-  router.post('/salary', function(req, res) {
+//  router.post('/salary', function(req, res) {
+//    req.session.stayingInUK = req.body['stayingInUK'];
+//    console.log(req.session.stayingInUK);
+//    if(req.session.stayingInUK == "yes") {
+//      res.redirect('/salary');
+//    } else {
+//      res.redirect('/end-2');
+//    }
+//  });
+
+  router.all('/staying-in-uk', function(req, res) {
+    res.render('staying-in-uk', {'form_action' : '/store-staying-in-uk' });
+  });
+
+  router.post('/store-staying-in-uk', function(req, res) {
     req.session.stayingInUK = req.body['stayingInUK'];
     console.log(req.session.stayingInUK);
     if(req.session.stayingInUK == "yes") {
@@ -234,12 +276,26 @@ module.exports = function (router) {
     } else {
       res.redirect('/end-2');
     }
-  })
+  });
 
   /*******************
   * Current Salary
   *******************/
-  router.post('/relationship-status', function(req, res) {
+//  router.post('/relationship-status', function(req, res) {
+//    req.session.correctSalary = req.body['correctSalary'];
+//    console.log(req.session.correctSalary);
+//    if(req.session.correctSalary == "yes") {
+//      res.redirect('/relationship-status');
+//    } else {
+//      res.redirect('/prototype');
+//    }
+//  });
+
+  router.all('/salary', function(req, res) {
+    res.render('salary', {'form_action' : '/store-salary' });
+  });
+
+  router.post('/store-salary', function(req, res) {
     req.session.correctSalary = req.body['correctSalary'];
     console.log(req.session.correctSalary);
     if(req.session.correctSalary == "yes") {
@@ -252,7 +308,21 @@ module.exports = function (router) {
   /********************
   * Relationship Status
   ********************/
-  router.post('/partner-earnings', function(req, res) {
+//  router.post('/partner-earnings', function(req, res) {
+//    req.session.relationshipStatus = req.body['relationshipStatus'];
+//    console.log(req.session.relationshipStatus);
+//    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
+//      res.redirect('/partner-earnings');
+//    } else {
+//      res.redirect('/pay-preference');
+//    }
+//  });
+
+  router.all('/relationship-status', function(req, res) {
+    res.render('relationship-status', {'form_action' : '/store-relationship-status' });
+  });
+
+  router.post('/store-relationship-status', function(req, res) {
     req.session.relationshipStatus = req.body['relationshipStatus'];
     console.log(req.session.relationshipStatus);
     if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
@@ -265,7 +335,21 @@ module.exports = function (router) {
   /*********************
   * Partner Earnings
   *********************/
-  router.post('/prototype', function(req, res) {
+//  router.post('/prototype', function(req, res) {
+//    req.session.partnerEarnings = req.body['partnerEarnings'];
+//    console.log(req.session.partnerEarnings);
+//    if(req.session.partnerEarnings == "yes") {
+//      res.redirect('/prototype');
+//    } else {
+//      res.redirect('/pay-preference');
+//    }
+//  });
+
+  router.all('/partner-earnings', function(req, res) {
+    res.render('partner-earnings', {'form_action': '/store-partner-earnings' });
+  });
+
+  router.post('/store-partner-earnings', function(req, res) {
     req.session.partnerEarnings = req.body['partnerEarnings'];
     console.log(req.session.partnerEarnings);
     if(req.session.partnerEarnings == "yes") {
@@ -278,7 +362,17 @@ module.exports = function (router) {
   /*************************
   * Pay Preference
   *************************/
-  router.post('/bank-details', function(req, res) {
+//  router.post('/bank-details', function(req, res) {
+//    req.session.payPreference = req.body['payPreference'];
+//    console.log(req.session.payPreference);
+//    res.redirect('/bank-details');
+//  });
+
+  router.all('/pay-preference', function(req, res) {
+    res.render('pay-preference', {'form_action': '/store-pay-preference' });
+  });
+
+  router.post('/store-pay-preference', function(req, res) {
     req.session.payPreference = req.body['payPreference'];
     console.log(req.session.payPreference);
     res.redirect('/bank-details');
@@ -287,7 +381,21 @@ module.exports = function (router) {
   /***********************
   * Bank Details
   ***********************/
-  router.post('/payment-details', function(req, res) {
+//  router.post('/payment-details', function(req, res) {
+//    req.session.bankDetails = req.body['bankDetails'];
+//    console.log(req.session.bankDetails);
+//    if(req.session.bankDetails == "yes") {
+//      res.redirect('/payment-details');
+//    } else {
+//      res.redirect('/prototype');
+//    }
+//  });
+
+  router.all('/bank-details', function(req, res) {
+    res.render('bank-details', {'form_action': '/store-bank-details' });
+  });
+
+  router.post('/store-bank-details', function(req, res) {
     req.session.bankDetails = req.body['bankDetails'];
     console.log(req.session.bankDetails);
     if(req.session.bankDetails == "yes") {
