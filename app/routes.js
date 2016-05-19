@@ -15,6 +15,8 @@ app.use(expressSession({secret:'somesecrettokenhere'}));
 
 app.use(bodyParser());
 
+module.exports = router;
+
 module.exports = {
   bind : function (router) {
 
