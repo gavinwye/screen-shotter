@@ -97,6 +97,10 @@ module.exports = function (router) {
     res.redirect('/claim-on-behalf');
   });
 
+  router.all('/child-result', function(req, res) {
+    res.render('child-result', { 'name' : req.session.childFirstName + " " + req.session.childLastName });
+  });
+
   /******************
   * Claiming on behalf
   ******************/
@@ -112,7 +116,7 @@ module.exports = function (router) {
     } else {
       res.redirect('/living-with-child');
     }
-  }); 
+  });
 
   /*****************
   * Child live with you
