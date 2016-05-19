@@ -24,8 +24,10 @@ var config = {
 
   	if (host.indexOf(config.hostname) > -1) {
   		redirectUrl = util.format("http://%s.herokuapp.com", config.hostname);
+      console.log(redirectUrl);
   	} else {
   		redirectUrl = util.format("http://localhost:%s", config.port);
+      console.log(redirectUrl);
   	}
   	console.log('redirectUrl: ' + redirectUrl);
   	return redirectUrl;
