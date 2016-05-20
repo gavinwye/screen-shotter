@@ -123,5 +123,5 @@ $(document).ready(function() {
   var toggleContent = new ShowHideContent();
   toggleContent.showHideRadioToggledContent();
   toggleContent.showHideCheckboxToggledContent();
-
+  $('.verify-start').attr("href", "http://2fa:auth@twofactor-prototype.herokuapp.com/01_govuk-login_sa?url=" + document.location.origin + "/16-or-over");
 });
