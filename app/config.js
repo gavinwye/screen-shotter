@@ -4,7 +4,7 @@ var util = require("util");
 
 var config = {
 
-  hostname: "child-benefit-prototype",
+  // hostname: "child-benefit-prototype",
 
   // Service name used in header. Eg: 'Renew your passport'
   serviceName: "Child Benefit ",
@@ -23,7 +23,7 @@ var config = {
   	var redirectUrl;
 
   	if (host.indexOf(config.hostname) > -1) {
-  		redirectUrl = util.format("http://%s.herokuapp.com", config.hostname);
+  		redirectUrl = util.format("http://%s.herokuapp.com", config.location.origin);
       console.log(redirectUrl);
   	} else {
   		redirectUrl = util.format("http://localhost:%s", config.port);
