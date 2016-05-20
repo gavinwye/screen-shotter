@@ -25,12 +25,8 @@ module.exports = {
       // this is used for the IV (authentication) prototype so that we dont have to keep
       // changing the URl between localhost and the heroku app's URL.
       // The js for this is in the file /app/views/config.js
-      // res.render('index', {
-      //   'redirect' : redirectUrl
-      // });
+      res.render('index');
     });
-    console.log("Tst");
-    console.log(url.hostname);
 
   require('./routes-filelist')(router);
   require('./custom-routes')(router);
