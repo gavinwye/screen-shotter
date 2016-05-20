@@ -22,7 +22,7 @@ var config = {
   	var host = req.get('host');
   	var redirectUrl;
 
-  	if (host.indexOf(config.hostname) > -1) {
+  	if (host.indexOf(config.location.origin) > -1) {
   		redirectUrl = util.format("http://%s.herokuapp.com", config.location.origin);
       console.log(redirectUrl);
   	} else {
