@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Variables</h1>
+
+      <ul id="foldertree">
+        <li>16 or over? {{ 16over }}</li>
+        <li>UK Born? {{ ukBirth }}</li>
+        <li>Whick UK Country {{ ukBirthCountry }}</li>
+        <li>Child Date of birth: {{ childDob }}</li>
+        <li>Child gender: {{ childGender }}</li>
+        <li>Claiming on behalf: {{ childBehalf }}</li>
+        <li>Living with child: {{ liveWithChild }}</li>
+        <li>Current Address: {{ currentAddress }}</li>
+        <li>Lived over 3 months: {{ monthsLived }}</li>
+        <li>Staying in the UK: {{ stayingInUK }}</li>
+        <li>Correct Salary: {{ correctSalary }}</li>
+        <li>Relationship Status: {{ relationshipStatus }}</li>
+        <li>Partner Earnings: {{ partnerEarnings }}</li>
+        <li>Pay Preference: {{ payPreference }}</li>
+        <li>Bank Details correct: {{ bankDetails }}</li>
+        <li>Child Name: {{ name }}</li>
+      </ul>
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

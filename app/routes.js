@@ -33,6 +33,7 @@ module.exports = {
 
   require('./routes-filelist')(router);
   require('./custom-routes')(router);
+  require('./variable-list')(router);
 
   }
 };
