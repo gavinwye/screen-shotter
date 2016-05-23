@@ -10,20 +10,20 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Are you making this claim on behalf of someone else?</h1>
+            <h1 class="heading-xlarge">Are you planning to leave the UK?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
             <form action="{{form_action}}" method="post" class="form">
-                <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Are you making this claim on behalf of someone else?</legend>
-                    <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="childBehalf" value="yes">
+                <fieldset class="form-group">
+                    <legend class="visuallyhidden">Are you planning to leave the UK?</legend>
+                    <label class="block-label" for="leave-uk1">
                         Yes
+                        <input id="leave-uk1" type="radio" name="leave-uk" value="yes">
                     </label>
-                    <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="childBehalf" value="no">
-                        No
+                    <label class="block-label" for="leave-uk2">
+                      No  
+                      <input id="leave-uk2" type="radio" name="leave-uk" value="no">
                     </label>
                 </fieldset>
                 <div class="form-group">

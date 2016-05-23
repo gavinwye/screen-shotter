@@ -10,20 +10,20 @@ Child Benefit Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Is the child you're claiming for under 16?</h1>
+            <h1 class="heading-xlarge">Are you planning to be away from the UK for more than 8 weeks?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
             <form action="{{form_action}}" method="post" class="form">
-                <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Is the child you're claiming for under 16?</legend>
-                    <label class="block-label" for="over16">
-                        <input id="radio-inline-1" type="radio" name="over16" value="yes">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Are you planning to be away from the UK for more than 8 weeks?</legend>
+                    <label class="block-label" for="always-uk1">
                         Yes
+                        <input id="away-8-weeks1" type="radio" name="away-8-weeks" value="yes">
                     </label>
-                    <label class="block-label" for="over16">
-                        <input id="radio-inline-2" type="radio" name="over16" value="no">
-                        No
+                    <label class="block-label" for="always-uk2">
+                      No  
+                      <input id="away-8-weeks2" type="radio" name="away-8-weeks" value="no">
                     </label>
                 </fieldset>
                 <div class="form-group">

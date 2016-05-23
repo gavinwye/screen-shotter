@@ -5,28 +5,25 @@ Child Benefit Prototype
 {% endblock %}
 
 {% block content %}
-<script>
-  console.log(localStorage.getItem("test"));
-</script>
 
 <main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Was the child's birth registered in the UK?</h1>
+            <h1 class="heading-xlarge">Are you planning to be away from the UK for more than 12 weeks?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
             <form action="{{form_action}}" method="post" class="form">
-                <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Was the child's birth registered in the UK?</legend>
-                    <label class="block-label" for="radio-inline-1">
-                        <input id="radio-inline-1" type="radio" name="ukBirth" value="yes">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Are you planning to be away from the UK for more than 12 weeks?</legend>
+                    <label class="block-label" for="always-uk1">
                         Yes
+                        <input id="away-12-weeks1" type="radio" name="away-12-weeks" value="yes">
                     </label>
-                    <label class="block-label" for="radio-inline-2">
-                        <input id="radio-inline-2" type="radio" name="ukBirth" value="no">
-                        No
+                    <label class="block-label" for="always-uk2">
+                      No  
+                      <input id="away-12-weeks2" type="radio" name="away-12-weeks" value="no">
                     </label>
                 </fieldset>
                 <div class="form-group">

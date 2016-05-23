@@ -54,7 +54,7 @@ module.exports = function (router) {
 
   /*********************
   * Date of Birth
-  **********************/
+**********************/
   router.all('/date-of-birth', function(req, res) {
     res.render('date-of-birth', {'form_action' : '/store-dob' });
   });
@@ -64,16 +64,7 @@ module.exports = function (router) {
     req.session.dobMonth = req.body['dobMonth'];
     req.session.dobYear = req.body['dobYear'];
     console.log(req.session.dobDay);
-    console.log(req.session.dobMonth);
-    console.log(req.session.dobYear);
-    res.redirect('/child-gender');
-  });
-
-  /*******************
-  * Gender
-  *******************/
-  router.all('/child-gender', function(req, res) {
-    res.render('child-gender', {'form_action' : '/store-gender' });
+  es.render('child-gender', {'form_action' : '/store-gender' })
   });
 
   router.post('/store-gender', function(req, res) {
@@ -81,9 +72,18 @@ module.exports = function (router) {
     console.log(req.session.gender);
     res.redirect('/name-of-child');
   });
-
-  /******************
+  });
+; /******************
   * Name of Child
+  ******************/
+  router.all('/name-of-child', function(req,res){
+  	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
+  });
+  * Name of Child
+
+<p>test</p>
+
+{% endblock %}
   ******************/
   router.all('/name-of-child', function(req,res){
   	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
