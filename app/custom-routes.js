@@ -261,7 +261,7 @@ module.exports = function (router) {
     req.session.bankDetails = req.body['bankDetails'];
     console.log(req.session.bankDetails);
     if(req.session.bankDetails == "yes") {
-      res.redirect('/prototype');
+      res.redirect('/payment-details');
     } else {
       res.redirect('/prototype');
     }
