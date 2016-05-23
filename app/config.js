@@ -4,7 +4,7 @@ var util = require("util");
 
 var config = {
 
-  hostname: "child-benefit-prototype",
+  hostname: "child benefit prototype",
 
   // Service name used in header. Eg: 'Renew your passport'
   serviceName: "Child Benefit ",
