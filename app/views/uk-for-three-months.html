@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Have you lived in the UK for the past 3 months?</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium"></h2>
+
+            <form action="{{form_action}}" method="post" class="form">
+                <fieldset class="inline form-group">
+                    <legend class="visuallyhidden">Have you lived in the UK for the past 3 months?</legend>
+                    <label class="block-label" for="radio-inline-1">
+                        <input id="radio-inline-1" type="radio" name="monthsLived" value="yes">
+                        Yes
+                    </label>
+                    <label class="block-label" for="radio-inline-2">
+                        <input id="radio-inline-2" type="radio" name="monthsLived" value="no">
+                        No
+                    </label>
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

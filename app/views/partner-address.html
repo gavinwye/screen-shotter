@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Does your partner live at the same adress as you and the child you are claiming for?</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium"></h2>
+
+            <form action="{{form_action}}" method="post" class="form">
+                <fieldset class="form-group inline">
+                    <legend class="visuallyhidden">Does your partner live at the same adress as you and the child you are claiming for?</legend>
+                    <!-- <span class="form-hint">Select all that apply.</span> -->
+                    <label class="block-label" for="child-benefits-radio1">
+                        Yes
+                        <input id="child-benefits-radio1" type="radio" name="gender" value="male">
+                    </label>
+                    <label class="block-label" for="child-benefits-radio2">
+                        No
+                        <input id="child-benefits-radio2" type="radio" name="gender" value="female">
+                    </label>
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
