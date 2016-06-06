@@ -38,7 +38,7 @@ module.exports = function (router) {
   router.post('/store-gender', function(req, res) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
-    res.redirect('/name-of-child');
+    res.redirect('/living-with-child');
   });
 
   /*****************
@@ -67,7 +67,7 @@ module.exports = function (router) {
     req.session.alwaysInUk = req.body['always-uk'];
     console.log(req.session.alwaysInUk);
     if(req.session.alwaysInUk == "yes") {
-      res.redirect('/leave-uk');
+      res.redirect('/british-citizen');
     } else {
       res.redirect('/prototype');
     }
@@ -87,6 +87,23 @@ module.exports = function (router) {
       res.redirect('/prototype');
     }
   });
+
+  /*************************************
+	  * claiming for another child
+	  **************************************/
+	  router.all('/current-claim', function(req, res) {
+	    res.render('current-claim', {'form_action' : '/store-current-claim' });
+	  });
+
+	  router.post('/store-current-claim', function(req, res) {
+	    req.session.claiming = req.body['claiming'];
+	    console.log(req.session.claiming);
+    if(req.session.claiming == "yes") {
+      res.redirect('/prototype');
+    } else {
+	      res.redirect('/name-of-child');
+    }
+	  });
 
   // Away 1 year
 
