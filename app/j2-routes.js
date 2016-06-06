@@ -91,11 +91,11 @@ module.exports = function (router) {
   /*************************************
 	  * claiming for another child
 	  **************************************/
-	  router.all('/other-claim/claiming-for-another', function(req, res) {
-	    res.render('other-claim/claiming-for-another', {'form_action' : '/store-claiming-for-another' });
+	  router.all('/current-claim', function(req, res) {
+	    res.render('current-claim', {'form_action' : '/store-current-claim' });
 	  });
 
-	  router.post('/store-claiming-for-another', function(req, res) {
+	  router.post('/store-current-claim', function(req, res) {
 	    req.session.claiming = req.body['claiming'];
 	    console.log(req.session.claiming);
     if(req.session.claiming == "yes") {
