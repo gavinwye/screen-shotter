@@ -1,5 +1,22 @@
 module.exports = function (router) {
 
+ /*************************************
+	  * claiming for another child
+	  **************************************/
+	router.all('/current-claim', function(req, res) {
+	  res.render('current-claim', {'form_action' : '/store-current-claim' });
+	});
+
+	router.post('/store-current-claim', function(req, res) {
+	  req.session.claiming = req.body['claiming'];
+	  console.log(req.session.claiming);
+    if(req.session.claiming == "yes") {
+      res.redirect('/prototype');
+    } else {
+	    res.redirect('/name-of-child');
+    }
+  });
+
   router.all('/name-of-child', function(req,res){
   	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
   });
@@ -131,6 +148,73 @@ module.exports = function (router) {
     }
   });
 
+  // 50K Earnings
+  router.all('/earnings-per-year', function(req, res) {
+    res.render('earnings-per-year', {'form_action' : '/store-earnings-per-year' });
+  });
+
+  router.post('/store-earnings-per-year', function(req, res) {
+    req.session.earningsPerYear = req.body['earningsPerYear']
+    console.log(req.session.earningsPerYear);
+    if(req.session.earningsPerYear == "yes") {
+      res.redirect('/prototype');
+    } else {
+      res.redirect('/income-calculator')
+    }
+   });
+
+  // Bank account name
+  router.all('/bank-account-name', function(req,res){
+  	res.render('bank-account-name', {'form_action' : '/store-bank-account-name' });
+  });
+
+  router.post('/store-bank-account-name', function (req,res){
+    req.session.bankAccName = req.body['bankAccountName'];
+    console.log(req.session.bankAccName);
+    res.redirect('/bank-details');
+  });
+
+  // Account and Sort Code
+  router.all('/bank-details', function(req,res){
+  	res.render('bank-details', {'form_action' : '/store-bank-details' });
+  });
+
+  router.post('/store-bank-details', function (req,res){
+    req.session.accountNumber = req.body['accountNumber'];
+    req.session.sortCode = req.body['sortCode'];
+    console.log(req.session.accountNumber);
+    console.log(req.session.sortCode);
+    res.redirect('/bank-account-address');
+  });
+  
+  // Address
+  router.all('/bank-account-address', function(req,res){
+  	res.render('bank-account-address', {'form_action' : '/store-bank-account-address' });
+  });
+
+  router.post('/store-bank-account-address', function (req,res){
+    req.session.addressLine1 = req.body['addressLine1'];
+    req.session.addressLine2 = req.body['addressLine2'];
+    req.session.town = req.body['town'];
+    req.session.county = req.body['county']
+    req.session.postcode = req.body['postcode'];
+    console.log(req.session.sortCode);
+    res.redirect('/pay-preference');
+  });
+
+/*************************
+  * Pay Preference
+  *************************/
+  router.all('/pay-preference', function(req, res) {
+    res.render('pay-preference', {'form_action': '/store-pay-preference' });
+  });
+
+  router.post('/store-pay-preference', function(req, res) {
+    req.session.payPreference = req.body['payPreference'];
+    console.log(req.session.payPreference);
+    res.redirect('/check-your-answers');
+  });
+
   // Leave UK
   router.all('/leave-uk', function(req, res) {
     res.render('leave-uk', {'form_action' : '/store-leave-uk' });
@@ -146,23 +230,7 @@ module.exports = function (router) {
     }
   });
 
-  /*************************************
-	  * claiming for another child
-	  **************************************/
-	  router.all('/current-claim', function(req, res) {
-	    res.render('current-claim', {'form_action' : '/store-current-claim' });
-	  });
-
-	  router.post('/store-current-claim', function(req, res) {
-	    req.session.claiming = req.body['claiming'];
-	    console.log(req.session.claiming);
-    if(req.session.claiming == "yes") {
-      res.redirect('/prototype');
-    } else {
-	      res.redirect('/name-of-child');
-    }
-	  });
-
+ 
 
   // Away 1 year
 

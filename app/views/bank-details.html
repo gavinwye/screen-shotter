@@ -14,12 +14,12 @@ Child Benefit Prototype
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form>
+            <form action="{{form_action}}" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">Account number</legend>
                     <div class="form-group">
                         <label class="form-label">Account number</label>
-                        <input type="text" name="accoutnNumber" class="form-control form-control--block"/>
+                        <input type="text" name="accountNumber" class="form-control form-control--block"/>
                     </div>
                     <div class="form-group">
                       <legend class="visuallyhidden">Sort code</legend>
@@ -27,8 +27,7 @@ Child Benefit Prototype
                         <input type="text" name='sortCode' class="form-control form-control--block input--medium"/>
                     </div>
                 </fieldset>
-                <!-- <input class="button" type="submit" value="Continue"> -->
-                <a href="check-your-details" class="button">Continue</a>
+              <input class="button" type="submit" value="Continue">
             </form>
         </div>
     </div>

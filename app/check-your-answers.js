@@ -11,7 +11,17 @@ module.exports = function (router) {
       'britishCitizen' : req.session.british,
       'claimantName' : req.session.claimantFirstName + " " + req.session.claimantLastName,
       'yourNino' : req.session.nino,
-      'relationshipStatus' : req.session.relationshipStatus
+      'relationshipStatus' : req.session.relationshipStatus,
+      'over50K' : req.session.earningsPerYear,
+      'bankAccName' : req.session.bankAccName,
+      'accountNo' : req.session.accountNumber,
+      'sortCode' : req.session.sortCode,
+      'addressLine1' : req.session.addressLine1,
+      'addressLine2' : req.session.addressLine2,
+      'town' : req.session.town,
+      'county' : req.session.county,
+      'postcode' : req.session.postcode,
+      'payPreference' : req.session.payPreference
     });
   });
   

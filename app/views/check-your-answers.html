@@ -107,7 +107,7 @@
         Name of payment bank account
         </td>
         <td>
-        {{ namePaymentAccount }}
+        {{ bankAccName }}
         </td>
       </tr>
       <tr>
@@ -115,8 +115,29 @@
         Account number and sort code
         </td>
         <td>
-        {{ accountNo }} {{ sortCode }}
+        {{ accountNo }}<br />
+        {{ sortCode }}
         </td>
+      </tr>
+      <tr>
+        <td>
+        Address acount is registered to
+        </td>
+        <td>
+        {{ addressLine1 }} <br />
+        {{ addressLine2 }} <br />
+        {{ town }} <br />
+        {{ county }} <br />
+        {{ postcode }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        How often would you like to get paid?
+        </td>
+        <td>
+        {{ payPreference }}
+        </td
       </tr>
     </tbody>
   </table>
@@ -128,7 +149,7 @@
   </p>
 
   <div class="form-group">
-    <a href="confirmation-page" class="button">Accept and send application</a>
+    <a href="/change-of-circs-notice" class="button">Continue</a>
   </div>
 
 </main>

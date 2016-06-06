@@ -15,7 +15,7 @@ Child Benefit Prototype
       <h2 class="bold-medium"></h2>
       <div class="panel panel-border-wide">This is the address that the bank uses for your account, it is not the bank's address.</div>
 
-      <form method="post" action="refund-and-bank-address-edit">
+      <form method="post" action="{{form_action}}" class="form">
         <div class="form-group">
           <label class="form-label" for="addressline1">House number or name</label>
           <input class="form-control" id="addressline1" name="addressLine1" type="text" value="" tabindex="1">
@@ -36,7 +36,9 @@ Child Benefit Prototype
           <label class="form-label" for="postcode">Postcode</label>
           <input class="form-control" id="postcode" name="postcode" type="text" style="width: 150px" value="">
         </div>
-        <button type="submit" class="button">Continue</button>
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
       </form>
     </div>
   </div>
