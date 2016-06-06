@@ -105,6 +105,23 @@ module.exports = function (router) {
     }
 	  });
 
+    /*************************************
+      * British citizen
+      **************************************/
+      router.all('/british-citizen', function(req, res) {
+        res.render('british-citizen', {'form_action' : '/store-british-citizen' });
+      });
+
+      router.post('/store-british-citizen', function(req, res) {
+        req.session.british = req.body['british'];
+        console.log(req.session.british);
+      if(req.session.british == "yes") {
+        res.redirect('/claimant-name');
+      } else {
+          res.redirect('/right-to-reside');
+      }
+      });
+
   // Away 1 year
 
 }
