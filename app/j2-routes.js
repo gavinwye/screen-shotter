@@ -38,7 +38,7 @@ module.exports = function (router) {
   router.post('/store-gender', function(req, res) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
-    res.redirect('/name-of-child');
+    res.redirect('/living-with-child');
   });
 
   /*****************
@@ -87,6 +87,23 @@ module.exports = function (router) {
       res.redirect('/prototype');
     }
   });
+
+  /*************************************
+	  * claiming for another child
+	  **************************************/
+	  router.all('/other-claim/claiming-for-another', function(req, res) {
+	    res.render('other-claim/claiming-for-another', {'form_action' : '/store-claiming-for-another' });
+	  });
+
+	  router.post('/store-claiming-for-another', function(req, res) {
+	    req.session.claiming = req.body['claiming'];
+	    console.log(req.session.claiming);
+    if(req.session.claiming == "yes") {
+      res.redirect('/prototype');
+    } else {
+	      res.redirect('/name-of-child');
+    }
+	  });
 
   // Away 1 year
 
