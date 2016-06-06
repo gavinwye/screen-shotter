@@ -24,3 +24,11 @@ URL'S of the files in the journey
       No -> Payment
 12. [Do you earn over 50K] http://localhost:3001/earnings-per-year
 13. [Income calculator] http://localhost:3001/income-calculator
+14. [Forecast how much you get] http://localhost:3001/hicbc-choice
+15. [We need to know how and when to pay you] http://localhost:3001/payment-start
+16. [name of account] http://localhost:3001/bank-account-name
+17. [Bank details (account number and sort code)] http://localhost:3001/bank-details
+18. [Account address] http://localhost:3001/bank-account-address
+19. [How often] http://localhost:3001/pay-preference
+20. [check your answers]
+21. [change of circs notice] http://localhost:3001/change-of-circs-notice

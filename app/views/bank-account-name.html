@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">What is the name on the bank account you would like to be paid to?</h1>
+            <p class="lede"></p>
+            <h2 class="bold-medium"></h2>
+
+            <form action="{{form_action}}" method="post" class="form">
+                <fieldset class="inline form-group">
+                    <!-- <legend class="visuallyhidden">What's the name of the child?</legend> -->
+                    <div class="form-group">
+                        <label class="form-label">Name as it appears on the bank account</label>
+                        <input type="text" name="bankAccountName" class="form-control form-control--block"/>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
