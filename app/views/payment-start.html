@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Financial help when you have a child
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Getting paid for Child Benefit</h1>
+      <h2 class="heading-medium">Before you start</h2>
+      <p>You'll need the following information</p>
+      <ul>
+        <li>Name the account is in</li>
+        <li>Banks details (account number and sort code)</li>
+        <li>address the account is registered to</li>
+      </ul>
+      <p><a class="button button-start" href="http://2fa:auth@twofactor-prototype.herokuapp.com/01_govuk-login_sa?url={{redirect}}/16-or-over&failUrl={{redirect}}/auth_fail">Start</a></p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
