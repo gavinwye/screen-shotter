@@ -14,7 +14,7 @@ Child Benefit Prototype
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form>
+            <form action="{{form_action}}" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">What's your name?</legend>
                     <div class="form-group">
@@ -26,8 +26,9 @@ Child Benefit Prototype
                         <input type="text" name="claimantLastName" class="form-control form-control--block"/>
                     </div>
                 </fieldset>
-                <!-- <input class="button" type="submit" value="Continue"> -->
-                <a href="national-insurance" class="button">Continue</a>
+                <div class="form-group">
+                  <input class="button" type="submit" id="submit" value="Continue">
+                </div>
             </form>
         </div>
     </div>

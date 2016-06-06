@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge">Your claim for Child Benefit has been successful</h1>
+          <p class="lede">You will be paid £20.70 per week. </p>
+          <p>Do you want to continue?</p>
+            <div class="form-group">
+              <a class="button" href="/payment-start">Continue</a>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}
