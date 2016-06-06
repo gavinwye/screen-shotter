@@ -67,7 +67,7 @@ module.exports = function (router) {
     req.session.alwaysInUk = req.body['always-uk'];
     console.log(req.session.alwaysInUk);
     if(req.session.alwaysInUk == "yes") {
-      res.redirect('/leave-uk');
+      res.redirect('/british-citizen');
     } else {
       res.redirect('/prototype');
     }
