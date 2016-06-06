@@ -20,5 +20,5 @@ module.exports = function (router) {
       'name' : req.session.childFirstName + " " + req.session.childLastName
     });
   });
-  
+
 }
