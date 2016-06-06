@@ -32,6 +32,7 @@ module.exports = {
 //  require('./custom-routes')(router);
   require('./j2-routes')(router);
   require('./variable-list')(router);
+  require('./check-your-answers')(router);
 
   }
 };

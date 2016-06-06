@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers before sending your application
+  </h1>
+
+  <table class="check-your-answers">
+    <tbody>
+      <tr>
+        <td>
+          Are you claiming for another child?
+        </td>
+        <td>
+          {{ claimingForAnother }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name of child you want to claim for
+        </td>
+        <td>
+          {{ nameOfChild }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Date of birth of child
+        </td>
+        <td>
+        {{ childDob }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Gender of child
+        </td>
+        <td>
+        {{ childGender }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Does this child live with you over 50% ofthe time?
+        </td>
+        <td>
+        {{ childLiveWith }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Have you lived in the UK or ROI for the last 3 months?
+        </td>
+        <td>
+        {{ ukOrRoi }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Are you a British citizen
+        </td>
+        <td>
+        {{ britishCitizen }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        What is your name?
+        </td>
+        <td>
+        {{ claimantName }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        What is your national insurance number
+        </td>
+        <td>
+        {{ yourNino }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        What is your martial status
+        </td>
+        <td>
+        {{ relationshipStatus }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Do you earn over 50K?
+        </td>
+        <td>
+        {{ over50K }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Name of payment bank account
+        </td>
+        <td>
+        {{ namePaymentAccount }}
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Account number and sort code
+        </td>
+        <td>
+        {{ accountNo }} {{ sortCode }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="heading-medium">Now send your application</h2>
+
+  <p class="text">
+    By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+  </p>
+
+  <div class="form-group">
+    <a href="confirmation-page" class="button">Accept and send application</a>
+  </div>
+
+</main>
+
+{% endblock %}

@@ -73,6 +73,64 @@ module.exports = function (router) {
     }
   });
 
+/*************************************
+* British citizen
+ **************************************/
+  router.all('/british-citizen', function(req, res) {
+    res.render('british-citizen', {'form_action' : '/store-british-citizen' });
+  });
+
+  router.post('/store-british-citizen', function(req, res) {
+    req.session.british = req.body['british'];
+      console.log(req.session.british);
+      if(req.session.british == "yes") {
+        res.redirect('/claimant-name');
+      } else {
+        res.redirect('/right-to-reside');
+     }
+   });
+ 
+ // Your Name
+  router.all('/claimant-name', function(req,res){
+  	res.render('claimant-name', {'form_action' : '/store-claimant-name' });
+  });
+
+  router.post('/store-claimant-name', function (req,res){
+    req.session.claimantFirstName = req.body['claimantFirstName'];
+    req.session.claimantLastName = req.body['claimantLastName'];
+    console.log(req.session.claimantFirstName);
+    console.log(req.session.claimantLastName);
+    res.redirect('/national-insurance');
+  });
+
+  // Your Nino
+  router.all('/national-insurance', function(req,res){
+  	res.render('national-insurance', {'form_action' : '/store-nino' });
+  });
+
+  router.post('/store-nino', function (req,res){
+    req.session.nino = req.body['nationalInsurance'];
+    console.log(req.session.nino);
+    res.redirect('/relationship-status');
+  });
+
+  /********************
+  * Relationship Status
+  ********************/
+  router.all('/relationship-status', function(req, res) {
+    res.render('relationship-status', {'form_action' : '/store-relationship-status' });
+  });
+
+  router.post('/store-relationship-status', function(req, res) {
+    req.session.relationshipStatus = req.body['relationship-status'];
+    console.log(req.session.relationshipStatus);
+    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
+      res.redirect('/partner-earnings');
+    } else {
+      res.redirect('/earnings-per-year');
+    }
+  });
+
   // Leave UK
   router.all('/leave-uk', function(req, res) {
     res.render('leave-uk', {'form_action' : '/store-leave-uk' });
@@ -105,22 +163,6 @@ module.exports = function (router) {
     }
 	  });
 
-    /*************************************
-      * British citizen
-      **************************************/
-      router.all('/british-citizen', function(req, res) {
-        res.render('british-citizen', {'form_action' : '/store-british-citizen' });
-      });
-
-      router.post('/store-british-citizen', function(req, res) {
-        req.session.british = req.body['british'];
-        console.log(req.session.british);
-      if(req.session.british == "yes") {
-        res.redirect('/claimant-name');
-      } else {
-          res.redirect('/right-to-reside');
-      }
-      });
 
   // Away 1 year
 
