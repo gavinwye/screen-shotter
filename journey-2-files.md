@@ -30,5 +30,6 @@ URL'S of the files in the journey
 17. [Bank details (account number and sort code)] http://localhost:3001/bank-details
 18. [Account address] http://localhost:3001/bank-account-address
 19. [How often] http://localhost:3001/pay-preference
-20. [check your answers]
+20. [check your answers] see adam
 21. [change of circs notice] http://localhost:3001/change-of-circs-notice
+22. [submit claim]

@@ -137,22 +137,6 @@ module.exports = function (router) {
      }
    });
 
-	 // right to right-to-reside
-
-	 router.all('/right-to-reside', function(req, res) {
-		 res.render('right-to-reside', {'form_action' : '/store-right-to-reside' });
-	 });
-
-	 router.post('/store-right-to-reside', function(req, res) {
-		 req.session.reside = req.body['reside'];
-			 console.log(req.session.reside);
-			 if(req.session.reside == "yes") {
-				 res.redirect('/residencey-card-number');
-			 } else {
-				 res.redirect('/right-to-reside-checks');
-			}
-		});
-
  // Your Name
   router.all('/claimant-name', function(req,res){
   	res.render('claimant-name', {'form_action' : '/store-claimant-name' });
@@ -251,11 +235,39 @@ module.exports = function (router) {
     req.session.earningsPerYear = req.body['earningsPerYear']
     console.log(req.session.earningsPerYear);
     if(req.session.earningsPerYear == "yes") {
-      res.redirect('/prototype');
+      res.redirect('/income-calculator');
     } else {
-      res.redirect('/income-calculator')
+      res.redirect('/payment-start');
     }
    });
+
+	 // Annual income
+   router.all('/income-calculator', function(req,res){
+   	res.render('income-calculator', {'form_action' : '/store-income-calculator' });
+   });
+
+   router.post('/store-income-calculator', function (req,res){
+     req.session.annualIncome = req.body['annualIncome'];
+     console.log(req.session.annualIncome);
+     res.redirect('/hicbc-choice');
+   });
+
+	 /*************************************
+	 * hicbc choice
+	  **************************************/
+			router.all('/hicbc-choice', function(req, res) {
+				res.render('hicbc-choice', {'form_action' : '/store-hicbc-choice', 'annualIncome' : req.session.annualIncome });
+			});
+
+			router.post('/store-hicbc-choice', function(req, res) {
+				req.session.hicbcChoice = req.body['hicbcChoice'];
+				console.log(req.session.hicbcChoice);
+				if(req.session.hicbcChoice == "yes") {
+					res.redirect('/payment-start');
+				} else {
+					res.redirect('/prototype');
+				}
+			 });
 
   // Bank account name
   router.all('/bank-account-name', function(req,res){
