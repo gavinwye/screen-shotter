@@ -137,6 +137,22 @@ module.exports = function (router) {
      }
    });
 
+	 // right to right-to-reside
+
+	 router.all('/right-to-reside', function(req, res) {
+		 res.render('right-to-reside', {'form_action' : '/store-right-to-reside' });
+	 });
+
+	 router.post('/store-right-to-reside', function(req, res) {
+		 req.session.reside = req.body['reside'];
+			 console.log(req.session.reside);
+			 if(req.session.reside == "yes") {
+				 res.redirect('/residencey-card-number');
+			 } else {
+				 res.redirect('/right-to-reside-checks');
+			}
+		});
+
  // Your Name
   router.all('/claimant-name', function(req,res){
   	res.render('claimant-name', {'form_action' : '/store-claimant-name' });
