@@ -7,39 +7,37 @@ Child Benefit Prototype
 {% block content %}
 
 <main id="content" role="main">
-    <div class="grid-row">
-        <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Your Child Benefit</h1>
-            <p class="lede">Based on the answers you have given us we forecast the amount of child benefit you are likley to recieve will be £107.64 per year.</p>
-            <p>However, we will pay you the full amount (£1,076.40 per year). You will have to complete Self Assessment and pay back £968.76.</p>
-<p>
-  You will have to register for self assessment seperately.
-</p>
-            <!--<p>We know, stupid right!</p>-->
-            <h2 class="bold-medium">Would you like to continue with your claim for Child Benefit?</h2>
-            <p>
+      <h1 class="heading-xlarge">Your Child Benefit</h1>
+      <p class="lede">Based on your adjusted net income of £{{ annualIncome }} we forecast the amount of Child Benefit you are likley to recieve will be £108.40 per year. This works out as £2.07 per week.</p>
+      <p>We will pay you the full amount (£1,076.40 per year). You will have to complete Self Assessment and pay back £968.00.</p>
+      <p>You will have to register for Self Assessment seperately.</p>
+      <!--<p>We know, stupid right!</p>-->
+      <h2 class="bold-medium">Would you like to continue with your claim for Child Benefit?</h2>
+      <p>
 
-            </p>
+      </p>
 
-            <form action="{{form_action}}" method="post" class="form">
-                <fieldset class="form-group inline">
-                    <legend class="visuallyhidden">Income calculator</legend>
-                    <label class="block-label" for="child-benefits-radio1">
-                        Yes
-                        <input id="child-benefits-radio1" type="radio" name="gender" value="male">
-                    </label>
-                    <label class="block-label" for="child-benefits-radio2">
-                        No
-                        <input id="child-benefits-radio2" type="radio" name="gender" value="female">
-                    </label>
-                </fieldset>
-                <div class="form-group">
-                  <input type="submit" id="submit" class="button" value="Continue">
-                </div>
-            </form>
-        </div>
+      <form action="{{form_action}}" method="post" class="form">
+          <fieldset class="inline form-group">
+              <!-- <legend class="visuallyhidden">Are you a British citizen?</legend> -->
+              <label class="block-label" for="hicbcChoiceYes">
+                  <input id="hicbcChoiceYes" type="radio" name="hicbcChoice" value="yes">
+                  Yes
+              </label>
+              <label class="block-label" for="hicbcChoiceNo">
+                  <input id="hicbcChoiceNo" type="radio" name="hicbcChoice" value="no">
+                  No
+              </label>
+          </fieldset>
+          <div class="form-group">
+            <input type="submit" id="submit" class="button" value="Continue">
+          </div>
+      </form>
     </div>
+  </div>
 </main>
 
 

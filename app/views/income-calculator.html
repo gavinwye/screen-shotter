@@ -7,31 +7,31 @@ Child Benefit Prototype
 {% block content %}
 
 <main id="content" role="main">
-    <div class="grid-row">
-        <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Income calculator</h1>
-            <p class="lede">This page will be used to collect income information from users so that we can help them decide if they would like to claim child benefit and do self assessment.</p>
-            <h2 class="bold-medium"></h2>
-
-            <form action="{{form_action}}" method="post" class="form">
-                <!-- <fieldset class="form-group inline">
-                    <legend class="visuallyhidden">Income calculator</legend>
-                    <label class="block-label" for="child-benefits-radio1">
-                        Yes
-                        <input id="child-benefits-radio1" type="radio" name="gender" value="male">
-                    </label>
-                    <label class="block-label" for="child-benefits-radio2">
-                        No
-                        <input id="child-benefits-radio2" type="radio" name="gender" value="female">
-                    </label>
-                </fieldset>-->
-                <div class="form-group">
-                  <a class="button" href="/payment-result">Continue</a>
-                </div>
-            </form>
+      <h1 class="heading-xlarge">What is your adjusted net income?</h1>
+      <div class="panel panel-border-wide">
+        <p>Adjusted net income is total taxable income before any Personal Allowances and less certain tax reliefs, for example:</p>
+        <ul class="list list-bullet">
+          <li>donations made to charities through Gift Aid</li>
+          <li>pension contributions paid gross (before tax relief)</li>
+          <li>pension contributions where your pension provider has already given you tax relief at the basic rate</li>
+        </ul>
+      </div>
+      <form action="{{form_action}}" method="post" class="form">
+        <fieldset class="inline form-group">
+          <legend class="visuallyhidden">What is your Adjusted net income?</legend>
+          <div class="form-group">
+            <input type="text" name="annualIncome" class="form-control form-control--block"/>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          <input type="submit" id="submit" class="button" value="Continue">
         </div>
+      </form>
     </div>
+  </div>
 </main>
 
 

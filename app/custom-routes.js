@@ -79,15 +79,6 @@ module.exports = function (router) {
   router.all('/name-of-child', function(req,res){
   	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
   });
-  * Name of Child
-
-<p>test</p>
-
-{% endblock %}
-  ******************/
-  router.all('/name-of-child', function(req,res){
-  	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
-  });
 
   router.post('/store-child-names', function (req,res){
     req.session.childFirstName = req.body['childFirstName'];
