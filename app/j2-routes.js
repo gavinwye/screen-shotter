@@ -11,7 +11,7 @@ module.exports = function (router) {
 	  req.session.claiming = req.body['claiming'];
 	  console.log(req.session.claiming);
     if(req.session.claiming == "yes") {
-      res.redirect('/prototype');
+      res.redirect('/current-claim-number');
     } else {
 	    res.redirect('/name-of-child');
     }
@@ -71,9 +71,39 @@ module.exports = function (router) {
     if(req.session.liveWithChild == "yes") {
       res.redirect('/always-in-uk');
     } else {
-      res.redirect('/prototype');
+      res.redirect('/contribute');
     }
   });
+
+	// contribution
+	router.all('/contribute', function(req, res) {
+		res.render('contribute', {'form_action' : '/store-contribute' });
+	});
+
+	router.post('/store-contribute', function(req, res) {
+		req.session.contribute = req.body['contribute'];
+		console.log(req.session.contribute);
+		if(req.session.contribute == "yes") {
+			res.redirect('/crown-servant');
+		} else {
+			res.redirect('/prototype');
+		}
+	});
+
+	// contribution
+	router.all('/crown-servant', function(req, res) {
+		res.render('crown-servant', {'form_action' : '/store-crown-servant' });
+	});
+
+	router.post('/store-crown-servant', function(req, res) {
+		req.session.crown = req.body['crown'];
+		console.log(req.session.crown);
+		if(req.session.crown == "yes") {
+			res.redirect('/british-citizen');
+		} else {
+			res.redirect('/prototype');
+		}
+	});
 
   // Always Living in the UK
   router.all('/always-in-uk', function(req, res) {
@@ -106,6 +136,22 @@ module.exports = function (router) {
         res.redirect('/right-to-reside');
      }
    });
+
+	 // right to right-to-reside
+
+	 router.all('/right-to-reside', function(req, res) {
+		 res.render('right-to-reside', {'form_action' : '/store-right-to-reside' });
+	 });
+
+	 router.post('/store-right-to-reside', function(req, res) {
+		 req.session.reside = req.body['reside'];
+			 console.log(req.session.reside);
+			 if(req.session.reside == "yes") {
+				 res.redirect('/residencey-card-number');
+			 } else {
+				 res.redirect('/right-to-reside-checks');
+			}
+		});
 
  // Your Name
   router.all('/claimant-name', function(req,res){
@@ -142,11 +188,59 @@ module.exports = function (router) {
     req.session.relationshipStatus = req.body['relationship-status'];
     console.log(req.session.relationshipStatus);
     if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
-      res.redirect('/partner-earnings');
+      res.redirect('/partner-claiming');
     } else {
       res.redirect('/earnings-per-year');
     }
   });
+
+	// partner claiming
+	router.all('/partner-claiming', function(req, res) {
+		res.render('partner-claiming', {'form_action' : '/store-partner-claiming' });
+	});
+
+	router.post('/store-partner-claiming', function(req, res) {
+		req.session.partnerClaim = req.body['partnerClaim']
+		console.log(req.session.partnerClaim);
+		if(req.session.partnerClaim == "male") {
+			res.redirect('/partner-address');
+		} else {
+			res.redirect('/partner-or-you-earnings')
+		}
+	 });
+
+	 // partner address
+	 router.all('/partner-address', function(req, res) {
+		 res.render('partner-address', {'form_action' : '/store-partner-address' });
+	 });
+
+	 router.post('/store-partner-address', function(req, res) {
+		 req.session.partnerAddress = req.body['partnerAddress']
+		 console.log(req.session.partnerAddress);
+		 if(req.session.partnerAddress == "yes") {
+			 res.redirect('/partner-or-you-earnings');
+		 } else {
+			 res.redirect('/income-calculator')
+		 }
+		});
+
+
+
+		// partner or you 50k earnings
+		router.all('/partner-or-you-earnings', function(req, res) {
+			res.render('partner-or-you-earnings', {'form_action' : '/store-partner-or-you-earnings' });
+		});
+
+		router.post('/store-partner-or-you-earnings', function(req, res) {
+			req.session.partnerOrYouEarnings = req.body['partnerOrYouEarnings']
+			console.log(req.session.partnerOrYouEarnings);
+			if(req.session.partnerOrYouEarnings == "yes") {
+				res.redirect('/income-calculator');
+			} else {
+				res.redirect('/payment-start')
+			}
+		 });
+
 
   // 50K Earnings
   router.all('/earnings-per-year', function(req, res) {
