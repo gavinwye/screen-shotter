@@ -64,7 +64,7 @@ module.exports = function (router) {
   * Child live with you
   *****************/
   router.all('/living-with-child', function(req, res) {
-    res.render('living-with-child', {'form_action' : '/store-living-with-child' });
+    res.render('living-with-child', {'form_action' : '/store-living-with-child', 'childName' : req.session.childFirstName  });
   });
 
   router.post('/store-living-with-child', function(req, res) {
