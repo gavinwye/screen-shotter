@@ -6,6 +6,10 @@ function ShowHideContent() {
     return(result);
   };
 
+  $('.link-back').click(function () {
+   parent.history.back();
+  });
+
   self.showHideRadioToggledContent = function () {
     $(".block-label input[type='radio']").each(function () {
 

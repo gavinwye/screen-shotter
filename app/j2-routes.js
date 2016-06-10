@@ -1,5 +1,7 @@
 module.exports = function (router) {
 
+
+
  /*************************************
 	  * claiming for another child
 	  **************************************/
@@ -351,6 +353,7 @@ module.exports = function (router) {
       res.redirect('/prototype');
     }
   });
+
 
 
 

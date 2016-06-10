@@ -4,9 +4,8 @@
 Child Benefit Prototype
 {% endblock %}
 
-{% block content %}
+ {% block content_with_banner %}
 
-<main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
 
@@ -17,12 +16,12 @@ Child Benefit Prototype
             <form action="{{form_action}}" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">Do you earn more than £50,009 per year?</legend>
-                    <label class="block-label" for="earningsPerYear">
-                        <input id="earningsPerYear" type="radio" name="earningsPerYear" value="yes">
+                    <label class="block-label" for="earningsPerYeary">
+                        <input id="earningsPerYeary" type="radio" name="earningsPerYear" value="yes">
                         Yes
                     </label>
-                    <label class="block-label" for="earningsPerYear">
-                        <input id="earningsPerYear" type="radio" name="earningsPerYear" value="no">
+                    <label class="block-label" for="earningsPerYearn">
+                        <input id="earningsPerYearn" type="radio" name="earningsPerYear" value="no">
                         No
                     </label>
                 </fieldset>

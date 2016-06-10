@@ -16,6 +16,15 @@
   with-proposition
 {% endblock %}
 
+{% block content %}
+ <main id="content" role="main">
+   {% include "includes/phase_banner_beta.html" %}
+   <a href="#"class="link-back">Back</a>
+     {% block content_with_banner %}{% endblock %}
+
+ </main>
+{% endblock %}
+
 {% block body_end %}
   {% include "includes/scripts.html" %}
   <!-- GOV.UK Prototype kit {{releaseVersion}} -->
