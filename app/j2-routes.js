@@ -71,7 +71,7 @@ module.exports = function (router) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
     if(req.session.refNumber) {
-      res.redirect('/check-your-answers');
+      res.redirect('/prototype');
     } else {
       res.redirect('/living-with-child');
     }
