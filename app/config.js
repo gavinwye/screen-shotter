@@ -7,7 +7,7 @@ var config = {
   hostname: "child benefit prototype",
 
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: "Child Benefit ",
+  serviceName: "Claim Child Benefit ",
 
   // Default port that prototype runs on
   port: '3001',
