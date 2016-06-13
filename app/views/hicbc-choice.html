@@ -4,7 +4,7 @@
 Child Benefit Prototype
 {% endblock %}
 
- 
+
 
  {% block content_with_banner %}
   <div class="grid-row">
@@ -13,7 +13,7 @@ Child Benefit Prototype
       <h1 class="heading-xlarge">Your Child Benefit</h1>
       <p class="lede">Based on your adjusted net income of £{{ annualIncome }}, you may be eligible to receive £{{ yearlyPaymentReceived }} of Child Benefit per year.
         This works out as £{{ paymentReceived }} per week.</p>
-      <p>We will pay you the full amount of £1,076.40 per year. You will have to pay a High Income Child Benefit Tax Charge of around £968 per year.</p>
+      <p>We will pay you the full amount of £1,076.40 per year. You will have to pay a High Income Child Benefit Tax Charge of around £{{ yearlyPaymentReceived }} per year.</p>
       <p>To pay this tax charge, you will have to register separately for Self Assessment.</p>
       <!--<p>We know, stupid right!</p>-->
       <h2 class="bold-medium">Would you like to continue with your claim for Child Benefit?</h2>
