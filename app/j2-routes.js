@@ -385,7 +385,7 @@ module.exports = function (router) {
   router.post('/store-bank-account-name', function (req,res){
     req.session.bankAccName = req.body['bankAccountName'];
     console.log(req.session.bankAccName);
-    res.redirect('/bank-details');
+    res.redirect('/bank-account-address');
   });
 
   // Account and Sort Code
@@ -398,7 +398,7 @@ module.exports = function (router) {
     req.session.sortCode = req.body['sortCode'];
     console.log(req.session.accountNumber);
     console.log(req.session.sortCode);
-    res.redirect('/bank-account-address');
+    res.redirect('/bank-account-name');
   });
 
   // Address
