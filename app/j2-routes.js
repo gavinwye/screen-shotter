@@ -168,7 +168,7 @@ module.exports = function (router) {
 			 if(req.session.reside == "yes") {
 				 res.redirect('/residencey-card-number');
 			 } else {
-				 res.redirect('/right-to-reside-checks');
+				 res.redirect('/prototype');
 			}
 		});
 
