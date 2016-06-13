@@ -206,7 +206,7 @@ module.exports = function (router) {
   router.post('/store-relationship-status', function(req, res) {
     req.session.relationshipStatus = req.body['relationship-status'];
     console.log(req.session.relationshipStatus);
-    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
+    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "civilPartnership" || req.session.relationshipStatus == "livingwithpartner") {
       res.redirect('/partner-claiming');
     } else {
       res.redirect('/earnings-per-year');
