@@ -135,7 +135,7 @@ module.exports = function (router) {
     if(req.session.alwaysInUk == "yes") {
       res.redirect('/british-citizen');
     } else {
-      res.redirect('/prototype');
+      res.redirect('/crown-servant');
     }
   });
 
@@ -206,7 +206,7 @@ module.exports = function (router) {
   router.post('/store-relationship-status', function(req, res) {
     req.session.relationshipStatus = req.body['relationship-status'];
     console.log(req.session.relationshipStatus);
-    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "livingwithpartner") {
+    if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "civilPartnership" || req.session.relationshipStatus == "livingwithpartner") {
       res.redirect('/partner-claiming');
     } else {
       res.redirect('/earnings-per-year');
@@ -385,7 +385,7 @@ module.exports = function (router) {
   router.post('/store-bank-account-name', function (req,res){
     req.session.bankAccName = req.body['bankAccountName'];
     console.log(req.session.bankAccName);
-    res.redirect('/bank-details');
+    res.redirect('/bank-account-address');
   });
 
   // Account and Sort Code
@@ -398,7 +398,7 @@ module.exports = function (router) {
     req.session.sortCode = req.body['sortCode'];
     console.log(req.session.accountNumber);
     console.log(req.session.sortCode);
-    res.redirect('/bank-account-address');
+    res.redirect('/bank-account-name');
   });
 
   // Address
