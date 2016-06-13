@@ -103,7 +103,7 @@ module.exports = function (router) {
 		req.session.contribute = req.body['contribute'];
 		console.log(req.session.contribute);
 		if(req.session.contribute == "yes") {
-			res.redirect('/crown-servant');
+			res.redirect('/always-in-uk');
 		} else {
 			res.redirect('/prototype');
 		}
