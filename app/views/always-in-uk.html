@@ -6,34 +6,37 @@ Child Benefit Prototype
 
 {% block content_with_banner %}
 
-    <div class="grid-row">
-        <div class="column-two-thirds">
+<div class="grid-row">
+  <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge">Have you lived in the UK or Common Travel Area for the last 3 months?</h1>
-            <p class="lede"></p>
-            <h2 class="bold-medium"></h2>
-
-
-
-            <form action="{{form_action}}" method="post" class="form">
-                <fieldset class="inline form-group">
-                    <legend class="visuallyhidden">Have you lived in the UK or common travel area for the last 3 months?</legend>
-                    <p>The Common Travel area is made up of the United Kingdom, the Channel Islands, the Isle of Man and the Republic of Ireland.</p>
-                    <label class="block-label" for="always-uk1">
-                        Yes
-                        <input id="always-uk1" type="radio" name="always-uk" value="yes">
-                    </label>
-                    <label class="block-label" for="always-uk2">
-                      No
-                      <input id="always-uk2" type="radio" name="always-uk" value="no">
-                    </label>
-                </fieldset>
-                <div class="form-group">
-                  <input type="submit" id="submit" class="button" value="Continue">
-                </div>
-            </form>
-        </div>
-    </div>
+    <h1 class="heading-xlarge">Have you lived in one of the following places for the last 3 months?</h1>
+    <p class="lede"></p>
+    <h2 class="bold-medium"></h2>
+    
+    <form action="{{form_action}}" method="post" class="form">
+      <fieldset class="inline form-group">
+        <legend class="visuallyhidden">Have you lived in one of the following places for the last 3 months?</legend>
+        <ul class="list list-bullet">
+          <li>United Kingdom</li>
+          <li>Channel Islands</li>
+          <li>Isle of Man</li>
+          <li>Republic of Ireland</li>
+        </ul>
+        <label class="block-label" for="always-uk1">
+          Yes
+          <input id="always-uk1" type="radio" name="always-uk" value="yes">
+        </label>
+        <label class="block-label" for="always-uk2">
+          No
+          <input id="always-uk2" type="radio" name="always-uk" value="no">
+        </label>
+      </fieldset>
+      <div class="form-group">
+        <input type="submit" id="submit" class="button" value="Continue">
+      </div>
+    </form>
+  </div>
+</div>
 </main>
 
 {% endblock %}
