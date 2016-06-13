@@ -19,6 +19,19 @@ module.exports = function (router) {
     }
   });
 
+  // Reference Number
+  router.all('/current-claim-number', function (req, res) {
+    res.render('current-claim-number', {'form_action' : '/store-claim-number' });
+  });
+
+  router.post('/store-claim-number', function(req, res) {
+    req.session.refNumber = req.body['childBenefitReferenceNumber'];
+    console.log(req.session.refNumber);
+    if(req.session.refNumber) {
+      res.redirect('/name-of-child');
+    }
+  });
+
   router.all('/name-of-child', function(req,res){
   	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
   });
@@ -57,7 +70,11 @@ module.exports = function (router) {
   router.post('/store-gender', function(req, res) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
-    res.redirect('/living-with-child');
+    if(req.session.refNumber) {
+      res.redirect('/prototype');
+    } else {
+      res.redirect('/living-with-child');
+    }
   });
 
   /*****************
@@ -259,22 +276,95 @@ module.exports = function (router) {
     }
    });
 
-	 // Annual income
-   router.all('/income-calculator', function(req,res){
-   	res.render('income-calculator', {'form_action' : '/store-income-calculator' });
-   });
+  // Annual income
+  router.all('/income-calculator', function(req,res){
+    res.render('income-calculator', {'form_action' : '/store-income-calculator' });
+  });
 
-   router.post('/store-income-calculator', function (req,res){
-     req.session.annualIncome = req.body['annualIncome'];
-     console.log(req.session.annualIncome);
-     res.redirect('/hicbc-choice');
-   });
+  router.post('/store-income-calculator', function (req,res){
+    req.session.annualIncome = req.body['annualIncome'];
+    console.log(req.session.annualIncome);
+    // Work out weekly rates for HICBC
+    paymentReceived = 0
+    yearlyPaymentReceived = 0
+    switch (true) {
+      case (req.session.annualIncome >= 50000 && req.session.annualIncome < 51000):
+        yearlyPaymentReceived = 1076.40;
+        break;
+			case (req.session.annualIncome >= 51000 && req.session.annualIncome < 52000):
+				yearlyPaymentReceived = 969.40;
+				break;
+			case (req.session.annualIncome >= 52000 && req.session.annualIncome < 53000):
+				yearlyPaymentReceived = 861.40;
+				break;
+			case (req.session.annualIncome >= 53000 && req.session.annualIncome < 54000):
+				yearlyPaymentReceived = 754.40;
+				break;
+			case (req.session.annualIncome >= 54000 && req.session.annualIncome < 55000):
+				yearlyPaymentReceived = 646.40;
+				break;
+			case (req.session.annualIncome >= 55000 && req.session.annualIncome < 56000):
+				yearlyPaymentReceived = 538.40
+				break;
+			case (req.session.annualIncome >= 56000 && req.session.annualIncome < 57000):
+				yearlyPaymentReceived = 431.40;
+				break;
+			case (req.session.annualIncome >= 57000 && req.session.annualIncome < 58000):
+				yearlyPaymentReceived = 323.40;
+				break;
+			case (req.session.annualIncome >= 58000 && req.session.annualIncome < 59000):
+				yearlyPaymentReceived = 215.40;
+				break;
+			case (req.session.annualIncome >= 59000 && req.esssion.annualIncome < 60000):
+				yearlyPaymentReceived = 108.40;
+				break;
+			case (req.sssion.annualIncome > 60000):
+				yearlyPaymentReceived = 0.40
+				break;
+    }
+		switch (true) {
+			case (req.session.annualIncome >= 50000 && req.session.annualIncome < 51000):
+				paymentReceived = 20.70;
+				break;
+			case (req.session.annualIncome >= 51000 && req.session.annualIncome < 52000):
+				paymentReceived = 18.64;
+				break;
+			case (req.session.annualIncome >= 52000 && req.session.annualIncome < 53000):
+				paymentReceived = 16.57;
+				break;
+			case (req.session.annualIncome >= 53000 && req.session.annualIncome < 54000):
+				paymentReceived = 14.51;
+				break;
+			case (req.session.annualIncome >= 54000 && req.session.annualIncome < 55000):
+				paymentReceived = 12.43;
+				break;
+			case (req.session.annualIncome >= 55000 && req.session.annualIncome < 56000):
+				paymentReceived = 10.35;
+				break;
+			case (req.session.annualIncome >= 56000 && req.session.annualIncome < 57000):
+				paymentReceived = 8.30;
+				break;
+			case (req.session.annualIncome >= 57000 && req.session.annualIncome < 58000):
+				paymentReceived = 6.22;
+				break;
+			case (req.session.annualIncome >= 58000 && req.session.annualIncome < 59000):
+				paymentReceived = 4.14;
+				break;
+			case (req.session.annualIncome >= 59000 && req.esssion.annualIncome < 60000):
+				paymentReceived = 2.08;
+				break;
+			case (req.sssion.annualIncome > 60000):
+				paymentReceived = 0.01;
+				break;
+		}
+    res.redirect('/hicbc-choice');
+  });
 
 	 /*************************************
 	 * hicbc choice
 	  **************************************/
 			router.all('/hicbc-choice', function(req, res) {
-				res.render('hicbc-choice', {'form_action' : '/store-hicbc-choice', 'annualIncome' : req.session.annualIncome });
+				res.render('hicbc-choice', {'form_action' : '/store-hicbc-choice', 'annualIncome' : req.session.annualIncome, 'paymentReceived' : paymentReceived.toFixed(2), 'yearlyPaymentReceived' : yearlyPaymentReceived.toFixed(2) });
 			});
 
 			router.post('/store-hicbc-choice', function(req, res) {
