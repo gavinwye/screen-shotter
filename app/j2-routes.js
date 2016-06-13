@@ -19,6 +19,19 @@ module.exports = function (router) {
     }
   });
 
+  // Reference Number
+  router.all('/current-claim-number', function (req, res) {
+    res.render('current-claim-number', {'form_action' : '/store-claim-number' });
+  });
+
+  router.post('/store-claim-number', function(req, res) {
+    req.session.refNumber = req.body['childBenefitReferenceNumber'];
+    console.log(req.session.refNumber);
+    if(req.session.refNumber) {
+      res.redirect('/name-of-child');
+    }
+  });
+
   router.all('/name-of-child', function(req,res){
   	res.render('name-of-child.html', {'form_action' : '/store-child-names' });
   });
@@ -57,7 +70,11 @@ module.exports = function (router) {
   router.post('/store-gender', function(req, res) {
     req.session.gender = req.body['gender'];
     console.log(req.session.gender);
-    res.redirect('/living-with-child');
+    if(req.session.refNumber) {
+      res.redirect('/check-your-answers');
+    } else {
+      res.redirect('/living-with-child');
+    }
   });
 
   /*****************
