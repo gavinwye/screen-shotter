@@ -48,7 +48,7 @@ module.exports = function (router) {
   * Date of Birth
 **********************/
   router.all('/date-of-birth', function(req, res) {
-    res.render('date-of-birth', {'form_action' : '/store-dob' });
+    res.render('date-of-birth', {'form_action' : '/store-dob', 'nameOfChild' : req.session.childFirstName });
   });
 
   router.post('/store-dob', function (req, res) {
@@ -64,7 +64,7 @@ module.exports = function (router) {
 /*******************
  * Gender of Child
  * ****************/
-  router.all('/child-gender', function(req, res) { res.render('child-gender', {'form_action' : '/store-gender' });
+  router.all('/child-gender', function(req, res) { res.render('child-gender', {'form_action' : '/store-gender', 'nameOfChild' : req.session.childFirstName });
   });
 
   router.post('/store-gender', function(req, res) {
@@ -81,7 +81,7 @@ module.exports = function (router) {
   * Child live with you
   *****************/
   router.all('/living-with-child', function(req, res) {
-    res.render('living-with-child', {'form_action' : '/store-living-with-child', 'childName' : req.session.childFirstName  });
+    res.render('living-with-child', {'form_action' : '/store-living-with-child', 'nameOfChild' : req.session.childFirstName });
   });
 
   router.post('/store-living-with-child', function(req, res) {
@@ -96,14 +96,14 @@ module.exports = function (router) {
 
 	// contribution
 	router.all('/contribute', function(req, res) {
-		res.render('contribute', {'form_action' : '/store-contribute' });
+		res.render('contribute', {'form_action' : '/store-contribute', 'nameOfChild' : req.session.childFirstName });
 	});
 
 	router.post('/store-contribute', function(req, res) {
 		req.session.contribute = req.body['contribute'];
 		console.log(req.session.contribute);
 		if(req.session.contribute == "yes") {
-			res.redirect('/crown-servant');
+			res.redirect('/always-in-uk');
 		} else {
 			res.redirect('/prototype');
 		}
