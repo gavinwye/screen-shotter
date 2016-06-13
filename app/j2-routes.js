@@ -135,7 +135,7 @@ module.exports = function (router) {
     if(req.session.alwaysInUk == "yes") {
       res.redirect('/british-citizen');
     } else {
-      res.redirect('/prototype');
+      res.redirect('/crown-servant');
     }
   });
 
