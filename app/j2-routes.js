@@ -13,9 +13,9 @@ module.exports = function (router) {
 	  req.session.claiming = req.body['claiming'];
 	  console.log(req.session.claiming);
     if(req.session.claiming == "yes") {
-      res.redirect('/current-claim-number');
+      res.redirect('/income-calculator');
     } else {
-	    res.redirect('/name-of-child');
+	    res.redirect('/income-calculator');
     }
   });
 
@@ -193,7 +193,7 @@ module.exports = function (router) {
   router.post('/store-nino', function (req,res){
     req.session.nino = req.body['nationalInsurance'];
     console.log(req.session.nino);
-    res.redirect('/relationship-status');
+    res.redirect('/payment-start');
   });
 
   /********************
@@ -207,7 +207,7 @@ module.exports = function (router) {
     req.session.relationshipStatus = req.body['relationship-status'];
     console.log(req.session.relationshipStatus);
     if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "civilPartnership" || req.session.relationshipStatus == "livingwithpartner") {
-      res.redirect('/partner-claiming');
+      res.redirect('/partner-or-you-earnings');
     } else {
       res.redirect('/earnings-per-year');
     }
@@ -222,9 +222,9 @@ module.exports = function (router) {
 		req.session.partnerClaim = req.body['partnerClaim']
 		console.log(req.session.partnerClaim);
 		if(req.session.partnerClaim == "male") {
-			res.redirect('/partner-address');
+			res.redirect('/income-calculator');
 		} else {
-			res.redirect('/partner-or-you-earnings')
+			res.redirect('/income-calculator')
 		}
 	 });
 
@@ -254,9 +254,9 @@ module.exports = function (router) {
 			req.session.partnerOrYouEarnings = req.body['partnerOrYouEarnings']
 			console.log(req.session.partnerOrYouEarnings);
 			if(req.session.partnerOrYouEarnings == "yes") {
-				res.redirect('/income-calculator');
+				res.redirect('/partner-claiming');
 			} else {
-				res.redirect('/payment-start')
+				res.redirect('/name-of-child')
 			}
 		 });
 
@@ -270,9 +270,9 @@ module.exports = function (router) {
     req.session.earningsPerYear = req.body['earningsPerYear']
     console.log(req.session.earningsPerYear);
     if(req.session.earningsPerYear == "yes") {
-      res.redirect('/income-calculator');
+      res.redirect('/current-claim');
     } else {
-      res.redirect('/payment-start');
+      res.redirect('/relationship-status');
     }
    });
 
@@ -371,7 +371,7 @@ module.exports = function (router) {
 				req.session.hicbcChoice = req.body['hicbcChoice'];
 				console.log(req.session.hicbcChoice);
 				if(req.session.hicbcChoice == "yes") {
-					res.redirect('/payment-start');
+					res.redirect('/name-of-child');
 				} else {
 					res.redirect('/prototype');
 				}
