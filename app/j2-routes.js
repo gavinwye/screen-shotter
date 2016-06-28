@@ -209,7 +209,7 @@ module.exports = function (router) {
     if(req.session.relationshipStatus == "married" || req.session.relationshipStatus == "civilPartnership" || req.session.relationshipStatus == "livingwithpartner") {
       res.redirect('/partner-or-you-earnings');
     } else {
-      res.redirect('/earnings-per-year');
+      res.redirect('/current-claim-2');
     }
   });
 
