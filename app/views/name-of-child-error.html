@@ -4,7 +4,18 @@
 Child Benefit Prototype
 {% endblock %}
 
+<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="polypage.jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="events.polypage.jquery.js"></script>
+<script src="cookie.polypage.jquery.js"></script>
+<script src="gui.polypage.jquery.js"></script>
+<script src="keyboard.polypage.jquery.js"></script>
 
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('body').polypage();
+  });
+</script>
 
  {% block content_with_banner %}
     <div class="grid-row">
