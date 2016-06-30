@@ -4,38 +4,51 @@
 Child Benefit Prototype
 {% endblock %}
 
-<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-<script src="polypage.jquery.js" type="text/javascript" charset="utf-8"></script>
-<script src="events.polypage.jquery.js"></script>
-<script src="cookie.polypage.jquery.js"></script>
-<script src="gui.polypage.jquery.js"></script>
-<script src="keyboard.polypage.jquery.js"></script>
+ {% block content_with_banner %}
 
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function() {
-    $('body').polypage();
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".toggle").click(function() {
+    //$(".error-message").toggle();
+    $("#error-marking").toggleClass("error");
+    $("#error-message-full-name").toggleClass("hidden");
   });
+});
 </script>
 
- {% block content_with_banner %}
     <div class="grid-row">
+
         <div class="column-two-thirds">
+
+<button class="toggle">Show errors</button>
+
 
             <h1 class="heading-xlarge">What's the child's name?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
+
             <form action="{{form_action}}" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">What's the child's name?</legend>
-                    <div class="form-group">
+                    <div  class="form-group">
                         <label class="form-label">First name</label>
+                        <div class="error-message">
+                          <p>You must enter a name</p>
+                        </div>
                         <input type="text" name="childFirstName" class="form-control form-control--block"/>
                     </div>
+
+                    <div id="error-marking" class="form-group error">
                     <div class="form-group">
                         <label class="form-label">Last name</label>
-                        <input type="text" name="childLastName" class="form-control form-control--block"/>
+                        <div class="error-message" id="error-message-full-name">
+                          Error message about full name goes here
+                        </div>
+                        <input type="text" name="childLastName" class="form-control form-control--block" aria-describedby="error-message-full-name" />
                     </div>
+
+                  </div>
                 </fieldset>
                 <div class="form-group">
                   <input type="submit" id="submit" class="button" value="Continue">
