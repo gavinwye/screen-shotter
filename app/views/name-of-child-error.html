@@ -10,8 +10,10 @@ Child Benefit Prototype
 $(document).ready(function(){
   $(".toggle").click(function() {
     //$(".error-message").toggle();
-    $("#error-marking").toggleClass("error");
-    $("#error-message-full-name").toggleClass("hidden");
+    $("#error-toggle").toggleClass("error");
+    $("#error-toggle2").toggleClass("error");
+    $("#error-message-toggle").toggleClass("error-message");
+    $("#error-message-toggle2").toggleClass("error-message");
   });
 });
 </script>
@@ -31,24 +33,24 @@ $(document).ready(function(){
             <form action="{{form_action}}" method="post" class="form">
                 <fieldset class="inline form-group">
                     <legend class="visuallyhidden">What's the child's name?</legend>
-                    <div  class="form-group">
+                    <div  class="form-group" id="error-toggle">
                         <label class="form-label">First name</label>
-                        <div class="error-message">
-                          <p>You must enter a name</p>
-                        </div>
+                        <span class="error-message" id="error-message-toggle">
+                          <p style="color:rgb(177,14,30);">You must enter a name</p>
+                        </span>
                         <input type="text" name="childFirstName" class="form-control form-control--block"/>
                     </div>
 
-                    <div id="error-marking" class="form-group error">
-                    <div class="form-group">
+
+                    <div  class="form-group" id="error-toggle2">
                         <label class="form-label">Last name</label>
-                        <div class="error-message" id="error-message-full-name">
-                          Error message about full name goes here
-                        </div>
-                        <input type="text" name="childLastName" class="form-control form-control--block" aria-describedby="error-message-full-name" />
+                        <span class="error-message" id="error-message-toggle2">
+                          <p style="color:rgb(177,14,30);">You must enter a name</p>
+                        </span>
+                        <input type="text" name="childLastName" class="form-control form-control--block"  />
                     </div>
 
-                  </div>
+
                 </fieldset>
                 <div class="form-group">
                   <input type="submit" id="submit" class="button" value="Continue">
