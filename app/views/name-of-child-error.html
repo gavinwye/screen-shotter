@@ -10,6 +10,7 @@ Child Benefit Prototype
 $(document).ready(function(){
   $(".toggle").click(function() {
     //$(".error-message").toggle();
+    $("#summary-error").toggleClass("hidden");
     $("#error-toggle").toggleClass("error");
     $("#error-toggle2").toggleClass("error");
     $("#error-message-toggle").toggleClass("error-message");
@@ -24,10 +25,31 @@ $(document).ready(function(){
 
 <button class="toggle">Show errors</button>
 
+            <div class="error-summary hidden" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1" id="summary-error">
+
+              <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+              You havent entered a name
+              </h1>
+
+              <p>
+              You need to enter a name to continue
+              </p>
+
+              <ul class="error-summary-list">
+              <li><a href="#error-message-toggle">You must enter a first name</a></li>
+              <li><a href="#error-message-toggle2">You must enter a last name</a></li>
+              </ul>
+
+            </div>
+
+
+
 
             <h1 class="heading-xlarge">What's the child's name?</h1>
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
+
+
 
 
             <form action="{{form_action}}" method="post" class="form">
@@ -36,7 +58,7 @@ $(document).ready(function(){
                     <div  class="form-group" id="error-toggle">
                         <label class="form-label">First name</label>
                         <span class="error-message" id="error-message-toggle">
-                          <p style="color:rgb(177,14,30);">You must enter a name</p>
+                          <p style="color:rgb(177,14,30);">You must enter a first name</p>
                         </span>
                         <input type="text" name="childFirstName" class="form-control form-control--block"/>
                     </div>
@@ -45,7 +67,7 @@ $(document).ready(function(){
                     <div  class="form-group" id="error-toggle2">
                         <label class="form-label">Last name</label>
                         <span class="error-message" id="error-message-toggle2">
-                          <p style="color:rgb(177,14,30);">You must enter a name</p>
+                          <p style="color:rgb(177,14,30);">You must enter a last name</p>
                         </span>
                         <input type="text" name="childLastName" class="form-control form-control--block"  />
                     </div>
@@ -53,7 +75,7 @@ $(document).ready(function(){
 
                 </fieldset>
                 <div class="form-group">
-                  <input type="submit" id="submit" class="button" value="Continue">
+                  <a href="#" class="button">Continue</a>
                 </div>
             </form>
         </div>
