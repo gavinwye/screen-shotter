@@ -404,8 +404,27 @@ module.exports = function (router) {
   router.post('/store-bank-account-name', function (req,res){
     req.session.bankAccName = req.body['bankAccountName'];
     console.log(req.session.bankAccName);
-    res.redirect('/bank-details');
+    res.redirect('/residential-address-is-bank-address');
   });
+	// Bank account is residential address
+	router.all('/residential-address-is-bank-address', function(req, res) {
+		res.render('residential-address-is-bank-address', {'form_action' : '/store-residential-address-is-bank-address',
+				'residentialAddressLine1' : req.session.residentialAddressLine1,
+				'residentialAddressLine2' : req.session.residentialAddressLine2,
+				'residentialTown' : req.session.residentialTown,
+				'residentialCounty' : req.session.residentialCounty,
+				'residentialPostcode' : req.session.residentialPostcode, });
+	});
+
+	router.post('/store-residential-address-is-bank-address', function(req, res) {
+		req.session.residentialAddress = req.body['residentialAddress']
+		console.log(req.session.residentialAddress);
+		if(req.session.residentialAddress == "yes") {
+			res.redirect('/bank-details');
+		} else {
+			res.redirect('/bank-account-address');
+		}
+	 });
 
   // Account and Sort Code
   router.all('/bank-details', function(req,res){
@@ -420,7 +439,7 @@ module.exports = function (router) {
     res.redirect('/bank-account-address');
   });
 
-  // Address
+  // Bank Account Alternative Address
   router.all('/bank-account-address', function(req,res){
   	res.render('bank-account-address', {'form_action' : '/store-bank-account-address' });
   });

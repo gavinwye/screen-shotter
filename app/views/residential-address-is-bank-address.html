@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit - GOV.UK
+{% endblock %}
+
+
+
+ {% block content_with_banner %}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">Is this the address the bank uses for your account?</h1>
+          <p>
+            {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
+            {{ residentialTown }} <br />
+            {{ residentialCounty }} <br />
+            {{ residentialPostcode }}
+          </p>
+
+            <form action="{{form_action}}" method="post" class="form">
+                <fieldset class="inline">
+                    <legend class="visuallyhidden">Is this the address the bak uses for your account?</legend>
+                    <label class="block-label" for="residential-address1">
+                        Yes
+                        <input id="residential-address1" type="radio" name="residentialAddress" value="yes">
+                    </label>
+                    <label class="block-label" for="residential-address2">
+                      No
+                      <input id="residential-address2" type="radio" name="residentialAddress" value="no">
+                    </label>
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" id="submit" class="button" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
