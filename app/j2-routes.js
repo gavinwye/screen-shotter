@@ -182,8 +182,27 @@ module.exports = function (router) {
     req.session.claimantLastName = req.body['claimantLastName'];
     console.log(req.session.claimantFirstName);
     console.log(req.session.claimantLastName);
-    res.redirect('/national-insurance');
+    res.redirect('/residential-address');
   });
+
+	// Residentail Address
+	router.all('/residential-address', function(req,res){
+		res.render('residential-address', {'form_action' : '/store-residential-address' });
+	});
+
+	router.post('/store-residential-address', function (req,res){
+		req.session.residentialaddressLine1 = req.body['residentialaddressLine1'];
+		req.session.residentialaddressLine2 = req.body['residentialaddressLine2'];
+		req.session.residentialtown = req.body['residentialtown'];
+		req.session.residentialcounty = req.body['residentialcounty']
+		req.session.residentialpostcode = req.body['residentialpostcode'];
+		console.log(req.session.residentialaddressLine1);
+		console.log(req.session.residentialaddressLine2);
+		console.log(req.session.residentialtown);
+		console.log(req.session.residentialcounty);
+		console.log(req.session.residentialpostcode);
+		res.redirect('/national-insurance');
+	});
 
   // Your Nino
   router.all('/national-insurance', function(req,res){
