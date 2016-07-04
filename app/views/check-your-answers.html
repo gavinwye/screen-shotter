@@ -41,7 +41,7 @@
           Are you already claiming for another child?
         </td>
         <td class="answer">
-          {{ claimingForAnother }}
+          {{ claiming }}
         </td>
         <td>
           <a href="/current-claim-2">Change</a>
@@ -60,7 +60,7 @@
       </tr>
       <tr>
         <td>
-          Whatʼs {{ nameOfChild }}ʼs date of birth?
+          {{ nameOfChild }}ʼs date of birth?
         </td>
         <td class="answer">
           {{ childDob }}
@@ -71,7 +71,7 @@
       </tr>
       <tr>
         <td>
-          Whatʼs {{ nameOfChild }}ʼs gender?
+          {{ nameOfChild }}ʼs gender?
         </td>
         <td class="answer">
           {{ childGender }}
@@ -126,7 +126,7 @@
       </tr>
       <tr>
         <td>
-          Whatʼs your address?
+          Whatʼs your Address?
         </td>
         <td class="answer">
           {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
@@ -176,11 +176,18 @@
         <td>
           Whatʼs the address the bank uses for your account?
         </td>
-        <td class="answer">
-          {{ addressLine1 }} {{ addressLine2 }} <br />
-          {{ town }} <br />
-          {{ county }} <br />
-          {{ postcode }}
+        <td class="answer bank-address">
+          {% if addressLine1.length %}
+            {{ addressLine1 }} {{ addressLine2 }} <br />
+            {{ town }} <br />
+            {{ county }} <br />
+            {{ postcode }}
+          {% else %}
+            {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
+            {{ residentialTown }} <br />
+            {{ residentialCounty }} <br />
+            {{ residentialPostcode }}
+          {% endif %}
         <td>
           <a href="/bank-account-address">Change</a>
         </td>

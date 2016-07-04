@@ -14,7 +14,7 @@ Child Benefit - GOV.UK
             <p class="lede"></p>
             <h2 class="bold-medium"></h2>
 
-            <form class="form">
+            <form class="form" method="post" action="{{form_action}}">
                 <fieldset class="form-group inline">
                     <legend class="visuallyhidden">Are you already claiming for another child?</legend>
                     <!-- <span class="form-hint">Select all that apply.</span> -->
@@ -28,7 +28,7 @@ Child Benefit - GOV.UK
                     </label>
                 </fieldset>
                 <div class="form-group">
-                <a class="button" href="/name-of-child">Continue</a>
+                  <input type="submit" id="submit" class="button" value="Continue">
                 </div>
             </form>
         </div>
