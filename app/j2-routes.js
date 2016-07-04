@@ -436,7 +436,7 @@ module.exports = function (router) {
     req.session.sortCode = req.body['sortCode'];
     console.log(req.session.accountNumber);
     console.log(req.session.sortCode);
-    res.redirect('/bank-account-address');
+    res.redirect('/check-your-answers');
   });
 
   // Bank Account Alternative Address
