@@ -176,15 +176,18 @@
         <td>
           Whatʼs the address the bank uses for your account?
         </td>
-        <td class="answer">
-          {{ addressLine1 }} {{ addressLine2 }} <br />
-          {{ town }} <br />
-          {{ county }} <br />
-          {{ postcode }}
-          {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
-          {{ residentialTown }} <br />
-          {{ residentialCounty }} <br />
-          {{ residentialPostcode }}
+        <td class="answer bank-address">
+          {% if addressLine1.length %}
+            {{ addressLine1 }} {{ addressLine2 }} <br />
+            {{ town }} <br />
+            {{ county }} <br />
+            {{ postcode }}
+          {% else %}
+            {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
+            {{ residentialTown }} <br />
+            {{ residentialCounty }} <br />
+            {{ residentialPostcode }}
+          {% endif %}
         <td>
           <a href="/bank-account-address">Change</a>
         </td>
