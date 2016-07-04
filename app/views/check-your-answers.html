@@ -126,6 +126,20 @@
       </tr>
       <tr>
         <td>
+          What's your Address?
+        </td>
+        <td class="answer">
+          {{ residentialAddressLine1 }} {{ residentialAddressLine2 }} <br />
+          {{ residentialTown }} <br />
+          {{ residentialCounty }} <br />
+          {{ residentialPostcode }}
+        </td>
+        <td>
+          <a href="/residential-address">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           What's your National Insurance number?
         </td>
         <td class="answer">
@@ -163,8 +177,7 @@
           What's the address the bank uses for your account?
         </td>
         <td class="answer">
-          {{ addressLine1 }} <br />
-          {{ addressLine2 }} <br />
+          {{ addressLine1 }} {{ addressLine2 }} <br />
           {{ town }} <br />
           {{ county }} <br />
           {{ postcode }}

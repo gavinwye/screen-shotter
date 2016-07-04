@@ -191,16 +191,16 @@ module.exports = function (router) {
 	});
 
 	router.post('/store-residential-address', function (req,res){
-		req.session.residentialaddressLine1 = req.body['residentialaddressLine1'];
-		req.session.residentialaddressLine2 = req.body['residentialaddressLine2'];
-		req.session.residentialtown = req.body['residentialtown'];
-		req.session.residentialcounty = req.body['residentialcounty']
-		req.session.residentialpostcode = req.body['residentialpostcode'];
-		console.log(req.session.residentialaddressLine1);
-		console.log(req.session.residentialaddressLine2);
-		console.log(req.session.residentialtown);
-		console.log(req.session.residentialcounty);
-		console.log(req.session.residentialpostcode);
+		req.session.residentialAddressLine1 = req.body['residentialAddressLine1'];
+		req.session.residentialAddressLine2 = req.body['residentialAddressLine2'];
+		req.session.residentialTown = req.body['residentialTown'];
+		req.session.residentialCounty = req.body['residentialCounty']
+		req.session.residentialPostcode = req.body['residentialPostcode'];
+		console.log(req.session.residentialAddressLine1);
+		console.log(req.session.residentialAddressLine2);
+		console.log(req.session.residentialTown);
+		console.log(req.session.residentialCounty);
+		console.log(req.session.residentialPostcode);
 		res.redirect('/national-insurance');
 	});
 
