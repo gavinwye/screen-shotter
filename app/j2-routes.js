@@ -19,6 +19,20 @@ module.exports = function (router) {
     }
   });
 
+	router.all('/current-claim-2', function(req, res) {
+	  res.render('current-claim-2', {'form_action' : '/store-current-claim-2' });
+	});
+
+	router.post('/store-current-claim-2', function(req, res) {
+	  req.session.claiming = req.body['claiming'];
+	  console.log(req.session.claiming);
+    if(req.session.claiming == "yes") {
+      res.redirect('/name-of-child');
+    } else {
+	    res.redirect('/name-of-child');
+    }
+  });
+
   // Reference Number
   router.all('/current-claim-number', function (req, res) {
     res.render('current-claim-number', {'form_action' : '/store-claim-number' });
