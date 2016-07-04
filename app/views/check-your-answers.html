@@ -16,119 +16,160 @@
     <tbody>
       <tr>
         <td>
-          Are you claiming for another child?
+        Do you earn more than £50,099 per year?
         </td>
-        <td>
-          {{ claimingForAnother }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          What's the name of child you want to claim for?
-        </td>
-        <td>
-          {{ nameOfChild }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        What's the child's date of birth?
-        </td>
-        <td>
-        {{ childDob }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        What's the child's gender?
-        </td>
-        <td>
-        {{ childGender }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        Does this child live with you over 50% of the time?
-        </td>
-        <td>
-        {{ childLiveWith }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Have you lived in the UK or ROI for the last 3 months?
-        </td>
-        <td>
-        {{ ukOrRoi }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        Are you a British citizen?
-        </td>
-        <td>
-        {{ britishCitizen }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        What's your name?
-        </td>
-        <td>
-        {{ claimantName }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        What's your National Insurance number?
-        </td>
-        <td>
-        {{ yourNino }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        What's your martial status?
-        </td>
-        <td>
-        {{ relationshipStatus }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-        Do you earn over 50K?
-        </td>
-        <td>
+        <td class="answer">
         {{ over50K }}
         </td>
-      </tr>
-      <tr>
         <td>
-        What name is your bank account in?
-        </td>
-        <td>
-        {{ bankAccName }}
+          <a href="/earnings-per-year">Change</a>
         </td>
       </tr>
       <tr>
         <td>
-        What's your account number and sort code?
+          What's your marital status?
+        </td>
+        <td class="answer">
+          {{ relationshipStatus }}
         </td>
         <td>
-        {{ accountNo }}<br />
-        {{ sortCode }}
+          <a href="/relationship-status">Change</a>
         </td>
       </tr>
       <tr>
         <td>
-        Which address is your account registered to?
+          Are you already claiming for another child?
+        </td>
+        <td class="answer">
+          {{ claimingForAnother }}
         </td>
         <td>
-        {{ addressLine1 }} <br />
-        {{ addressLine2 }} <br />
-        {{ town }} <br />
-        {{ county }} <br />
-        {{ postcode }}
+          <a href="/current-claim-2">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's the child's name?
+        </td>
+        <td class="answer">
+          {{ nameOfChild }}
+        </td>
+        <td>
+          <a href="/name-of-child">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ nameOfChild }}'s date of birth?
+        </td>
+        <td class="answer">
+          {{ childDob }}
+        </td>
+        <td>
+          <a href="/date-of-birth">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ nameOfChild }}'s gender?
+        </td>
+        <td class="answer">
+          {{ childGender }}
+        </td>
+        <td>
+          <a href="/child-gender">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Does {{ nameOfChild }} live with you?
+        </td>
+        <td class="answer">
+          {{ childLiveWith }}
+        </td>
+        <td>
+          <a href="/living-with-child">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Have you lived in one of these places for the last 3 months or longer?
+        </td>
+        <td class="answer">
+          {{ ukOrRoi }}
+        </td>
+        <td>
+          <a href="/always-in-uk">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Are you a British citizen?
+        </td>
+        <td class="answer">
+          {{ britishCitizen }}
+        </td>
+        <td>
+          <a href="/british-citizen">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's your name?
+        </td>
+        <td class="answer">
+          {{ claimantName }}
+        </td>
+        <td>
+          <a href="/claimant-name">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's your National Insurance number?
+        </td>
+        <td class="answer">
+          {{ yourNino }}
+        </td>
+        <td>
+          <a href="/national-insurance">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's your name as it appears on your bank card?
+        </td>
+        <td class="answer">
+          {{ bankAccName }}
+        </td>
+        <td>
+          <a href="/bank-account-name">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's your account number and sort code?
+        </td>
+        <td class="answer">
+          Account number: <br />{{ accountNo }}<br />
+          Sort code: <br />{{ sortCode }}
+        </td>
+        <td>
+          <a href="/bank-details">Change</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          What's the address the bank uses for your account?
+        </td>
+        <td class="answer">
+          {{ addressLine1 }} <br />
+          {{ addressLine2 }} <br />
+          {{ town }} <br />
+          {{ county }} <br />
+          {{ postcode }}
+        <td>
+          <a href="/bank-account-address">Change</a>
         </td>
       </tr>
     </tbody>
