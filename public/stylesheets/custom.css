@@ -1,3 +1,6 @@
 .error-message {
   display: none;
 }
+.check-your-answers .answer {
+  text-transform: capitalize;
+}
