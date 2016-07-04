@@ -2,7 +2,7 @@ module.exports = function (router) {
   // Over 16
   router.all('/check-your-answers', function(req,res){
     res.render('check-your-answers', {
-      'claimingForAnother' : req.session.claiming, 
+      'claimingForAnother' : req.session.claiming,
       'nameOfChild' : req.session.childFirstName + " " + req.session.childLastName,
       'childGender' : req.session.gender,
       'childDob' : req.session.dobDay + " " + req.session.dobMonth + " " + req.session.dobYear,
@@ -21,8 +21,13 @@ module.exports = function (router) {
       'town' : req.session.town,
       'county' : req.session.county,
       'postcode' : req.session.postcode,
-      'payPreference' : req.session.payPreference
+      'payPreference' : req.session.payPreference,
+      'residentialAddressLine1' : req.session.residentialAddressLine1,
+      'residentialAddressLine2' : req.session.residentialAddressLine2,
+      'residentialTown' : req.session.residentialTown,
+      'residentialCounty' : req.session.residentialCounty,
+      'residentialPostcode' : req.session.residentialPostcode
     });
   });
-  
+
 }

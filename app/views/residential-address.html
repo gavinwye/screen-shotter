@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Child Benefit - GOV.UK
+{% endblock %}
+
+
+
+ {% block content_with_banner %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">What's your address?</h1>
+      <p class="lede"></p>
+      <h2 class="bold-medium"></h2>
+      <!-- <div class="panel panel-border-wide">This is the address that the bank uses for your account, not the bank's address.</div> -->
+
+      <form method="post" action="{{form_action}}" class="form">
+        <div class="form-group">
+          <label class="form-label" for="residentialAddressLine1">House number or name</label>
+          <input class="form-control" id="residentialAddressLine1" name="residentialAddressLine1" type="text" value="" tabindex="1">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="residentialAddressLine2">Building and street</label>
+          <input class="form-control" id="residentialAddressLine2" name="residentialAddressLine2" type="text" value="">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="residentialTown">Town or city</label>
+          <input class="form-control" id="residentialTown" name="residentialTown" type="text" value="">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="residentialCounty">County (optional)</label>
+          <input class="form-control" id="residentialCounty" name="residentialCounty" type="text" value="">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="residentialPostcode">Postcode</label>
+          <input class="form-control" id="residentialPostcode" name="residentialPostcode" type="text" style="width: 150px" value="">
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
